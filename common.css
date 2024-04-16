@@ -162,7 +162,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    z-index: 2;
+    z-index: 4;
 }
 .logo-btn {
     width: 172px;
