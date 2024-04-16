@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHELTER－共享空間辦公室：逃離喧囂的世界，找回自己的寧靜</title>
+    <!-- style reset -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- RWD-style -->
+    <link rel="stylesheet" href="grid.css">
+    <!-- google font：inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- google font：Zen Kaku Gothic New -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <!-- google font：Karantina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <!-- google font：Aldrich -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <!-- custom-style-sheet -->
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="room.css">
+</head>
+<body>
+    <header>
+        <div class="logo-btn">
+            <a href="index.html">
+                <div class="logo-img-container">
+                    <img src="images/logo_rectangle.png" alt="shelter logo to main page">
+                </div>
+            </a>
+        </div>
+        <div class="btn-wrapper">
+            <div class="login-btn">
+                <a href="#">
+                    <div class="login-btn-container">會員登入</div>
+                </a>
+            </div>
+            <button id="menu-toggle">
+                <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
+            </button>
+            <nav id="site-menu">
+                <ul class="site-menu_list">
+                    <li class="site-menu_item"><a href="#">首頁</a></li>
+                    <li class="site-menu_item"><a href="#">關於我們</a></li>
+                    <li class="site-menu_item"><a href="#">最新消息</a></li>
+                    <li class="site-menu_item"><a href="#">空間介紹</a></li>
+                    <li class="site-menu_item"><a href="#">館內餐飲</a></li>
+                    <li class="site-menu_item"><a href="#">聯絡我們</a></li>
+                </ul>
+                <div class="social-icon-wrapper">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </nav>
+            <div id="overlay--black">
+            </div>
+        </div>
+    </header>
+    <div class="show-room-section">
+        <div class="show-room-container row">
+            <div class="room-gallery col-12 col-md-8">
+                <div class="room-img-main">
+                    <img src="images/space_single-room_s.jpg" alt="">    
+                </div>
+                <div class="room-img-thumbnail">
+                    <img src="images/space_single-room_s.jpg">
+                    <img src="images/space_socket-in-desk_s.jpg">
+                    <img src="images/spcae_devices_charger-n-cabel_s.jpg">
+                    <img src="images/space_grey-chair_s.jpg">
+                </div>
+            </div>
+            <div class="info-block col-12 col-md-4">
+                <div class="room-info">
+                    <h2>
+                        單人包廂辦公室
+                    </h2>
+                    <p class="font--subtitle">
+                        獨立的作業空間搭配符合人體工學的辦公桌椅與隔音牆面，給您滿滿的安定感，找回工作專注力
+                    </p>
+                    <ul>
+                        <li>共12間</li>
+                        <li>1.2坪/間</li>
+                        <li>無對外窗</li>
+                        <li>可調節色溫光源</li>
+                        <li>高抗噪藍芽耳機</li>
+                        <li>人體工學座椅</li>
+                    </ul>
+                </div>
+                <div class="price-select">
+                    <select name="single-room" id="single-room">
+                        <option value="day-sg">日租型︱700元/天</option>
+                        <option value="week-sg">週租型︱3,000元/5天</option>
+                        <option value="month-sg">月租型︱15,000元/30天</option>
+                    </select>
+                    <div class="btn btn--filled-cta">
+                        <a href="#" class="font--btn">立即預約</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floor-map-section">
+        <div class="divider-wrapper">
+            <div class="divider--white"></div>
+            <div class="triangle--white"></div>
+        </div>
+        <div class="floor-map-container row">
+            <div class="single-room-intro col-12 col-md-4">
+                <h3>鬧中取靜的獨享空間</h3>
+                <p>我們清楚獨立作業者需要相對安靜的環境，因此規劃上特意遠離會議室與餐廳等人流較高場所，保留動線的單純同時鄰近茶水間與洗手間，讓設施的取得更方便。</p>
+            </div>
+            <div class="floor-map col-12 col-md-8">
+                <img src="images/space_floor-map.svg" alt="shelter空間平面圖">
+                <!-- <div id="office-block-mark"></div> -->
+                <div id="single-room-mark"></div>
+            </div>
+        </div>
+    </div>
+    <div class="facility-section">
+        <div class="section-container">
+            <h2>設施與服務</h2>
+            <div class="facility-row row row-cols-2 row-cols-md-4">
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/door-open-solid.svg" alt=""></span>房內設施
+                    </div>
+                    <ul>
+                        <li>人體工學辦公桌椅</li>
+                        <li>衛生紙與消毒酒精</li>
+                        <li>桌前插座</li>
+                        <li>調控式情境光源</li>
+                        <li>三段式檯燈</li>
+                        <li>隔音房型</li>
+                    </ul>
+                </div>
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/wifi-solid.svg" alt=""></span>網路
+                    </div>
+                    <ul>
+                        <li>全館提供免費WiFi</li>
+                        <li>可免費借用網路線</li>
+                        <li>全館收訊良好</li>
+                        <li>大頻寬5G網路</li>
+                    </ul>
+                </div>
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/lock-solid.svg" alt=""></span>安全
+                    </div>
+                    <ul>
+                        <li>磁卡門鎖</li>
+                        <li>公共區域24小時監視器</li>
+                        <li>滅火器與偵煙探測器</li>
+                    </ul>
+                </div>
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/dining-solid.svg" alt=""></span>餐飲設施
+                    </div>
+                    <ul>
+                        <li>飲料零食販賣機</li>
+                        <li>24小時輕食餐廳</li>
+                        <li>免費茶水提供</li>
+                        <li>茶水間</li>
+                        <li>微波爐</li>
+                        <li>冰箱</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="facility-row row row-cols-2 row-cols-md-4">
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/shower-solid.svg" alt=""></span>衛浴與清潔
+                    </div>
+                    <ul>
+                        <li>公共淋浴間與廁所</li>
+                        <li>吹風機</li>
+                        <li>沐浴乳與洗髮精</li>
+                        <li>清潔服務 (另外收費)</li>
+                        <li>衣服送洗 (另外收費)</li>
+                    </ul>
+                </div>
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/square-parking-solid.svg" alt=""></span>接待設施
+                    </div>
+                    <ul>
+                        <li>無停車設施</li>
+                        <li>訪客會面大廳</li>
+                        <li>訪客免費茶水</li>
+                        <li>可提供統編發票</li>
+                    </ul>
+                </div>
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/circle-info-solid.svg" alt=""></span>綜合設施
+                    </div>
+                    <ul>
+                        <li>一氧化碳偵測器</li>
+                        <li>全館空調與暖氣</li>
+                        <li>館內全面禁菸</li>
+                        <li>全館無障礙環境</li>
+                    </ul>
+                </div>
+                <div class="col facility-card">
+                    <div class="facility-title">
+                        <span class="title-icon"><img src="images/icon_svg/sweet-heart-solid.svg" alt=""></span>貼心服務
+                    </div>
+                    <ul>
+                        <li>寄物服務</li>
+                        <li>傳真機與影印機</li>
+                        <li>文具與辦公用品販售</li>
+                        <li>電繪設備租借</li>
+                        <li>會議設備租借</li>
+                        <li>專注作業配備租借</li>
+                        <li>毛巾與毛毯租借</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="plan-section">
+        <div class="section-container">
+            <h2>租借方案</h2>
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col">
+                    <div class="plan-card">
+                        <div class="card-head">
+                            <div class="color-bar"></div>
+                            <div class="color-round">
+                                <img src="images/icon_svg/calendar-day-solid.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-txt">
+                                <div class="plan-type">單人︱日租型</div>
+                                <div class="plan-price">700<span>/1日</span></div>
+                                <ul>
+                                    <li>單日計費制</li>
+                                    <li>最晚可於前一日取消</li>
+                                    <li>超時費用另計</li>
+                                </ul> 
+                            </div>
+                            <div class="btn btn--stroke-secondary">
+                                <a href="#" class="font--btn">立即預約</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="plan-card">
+                        <div class="card-head">
+                            <div class="color-bar"></div>
+                            <div class="color-round">
+                                <img src="images/icon_svg/calendar-week-solid.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-txt">
+                                <div class="plan-type">單人︱週租型</div>
+                                <div class="plan-price">3,000<span>/5日</span></div>
+                                <ul>
+                                    <li>不分平日假日</li>
+                                    <li>連續五天租借</li>
+                                    <li>最晚可於三日前取消</li>
+                                    <li>超時費用另計</li>
+                                </ul> 
+                            </div>
+                            <div class="btn btn--stroke-secondary">
+                                <a href="#" class="font--btn">立即預約</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="plan-card">
+                        <div class="card-head">
+                            <div class="color-bar"></div>
+                            <div class="color-round">
+                                <img src="images/icon_svg/calendar-days-regular.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-txt">
+                                <div class="plan-type">單人︱月租型</div>
+                                <div class="plan-price">15,000<span>/30日</span></div>
+                                <ul>
+                                    <li>不分平日假日</li>
+                                    <li>連續30天租借</li>
+                                    <li>最晚可於一週前取消</li>
+                                    <li>超時費用另計</li>
+                                </ul> 
+                            </div>
+                            <div class="btn btn--stroke-secondary">
+                                <a href="#" class="font--btn">立即預約</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="back-to-space">
+        <div class="btn btn--stroke-primary">
+            <a href="space.html" class="font--btn">空間介紹</a>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container row row-cols-1 row-cols-md-2">
+            <div class="social-media-bar col">
+                <div class="footer-logo">
+                    <img src="images/logo_rectangle.png" alt="">
+                </div>
+                <div class="social-media-icon">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </div>
+            <div class="legal-notice col">
+                <a href="#" id="privacy-policy">隱私權保護政策</a>
+                <a href="#" id="term">使用者條款</a>
+                <p>Ⓒ 2024 SHELTER-Capsule Office Co.,Ltd All Right Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function(){
+            document.getElementById('site-menu').classList.toggle('active');
+            document.getElementById('overlay--black').classList.toggle('active');
+        });
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('site-menu').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

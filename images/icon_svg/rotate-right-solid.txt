@@ -1,0 +1,1 @@
+<i class="fa-solid fa-rotate-right fa-sm" style="color: #393129;"></i>

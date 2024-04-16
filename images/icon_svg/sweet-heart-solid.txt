@@ -1,0 +1,1 @@
+<i class="fa-brands fa-gratipay" style="color: #393129;"></i>

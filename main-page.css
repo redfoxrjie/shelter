@@ -1,0 +1,367 @@
+/* 首頁slider設定 */
+.slider-container {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+}
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0  auto;
+}
+.slider {
+    display: flex;
+    aspect-ratio: 2.133/1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;/*設定slider在scroll時吸附至吸附點的嚴格程度*/
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+.slider::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+.slider-bullets {
+    display: flex;
+    column-gap: 0.9rem;
+    position: absolute;
+    bottom: 8.2vh;
+    left: 7.4vw;
+    z-index: 1;
+}
+.slider-bullets a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1.3px  solid #fff;
+    opacity: 0.9;
+    transition: opacity ease 250ms;
+    transform: rotate(45deg);
+}
+.slider-bullets a:hover, .slider-bullets a:active {
+    opacity: 1;
+    background-color: #fff;
+}
+.slider-title-wrapper {
+    position: absolute;
+    top: 40%;
+    left:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    transform: translate(-50%, -30%);
+}
+.slider-subtitle {
+    font-family: "Karantina", Verdana, sans-serif;
+    color: #fff;
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-size: 14px;
+}
+.slider-title {
+    text-align: center;
+    width: 100%;
+}
+.slider-title img{
+    width: 50%;
+}
+.slider-cta-btn {
+    border: 1.4px solid #fff;
+    padding: 20px 34px;
+    margin-top: 15px;
+    display: inline-block;
+    font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.slider-cta-btn a {
+    display: block;
+}
+/*main區塊*/
+.main-section {
+    position: relative;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0px 0px 14px;
+    background-color: #FAF7F2;
+}
+.main-img-container {
+    width: 100%;
+    aspect-ratio: 2.133/1;
+    overflow: hidden;
+}
+.main-img-container img{
+    width: 100%;
+    height: auto;
+}
+#about-shelter-img img{
+    transform: translateY(-20%);
+} 
+.main-txt {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin: 0 102px;
+    margin-bottom: 30px;
+}
+@media screen and (min-width: 1024px) {
+    .main-txt {
+        width: 46%;
+    }
+}
+.main-content {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+}
+.main-section .row:nth-child(even) .main-content .main-txt {
+    border-left: 2px solid #393129;
+    padding-left: 6.25vw;
+    position: relative;
+}
+
+.main-section .row:nth-child(even) .main-content .main-txt .trapezoid--l {
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    width: 6px;
+    height: 22px;
+    background-color: #393129;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+.main-section .row:nth-child(even) .main-content .main-txt .trapezoid--s{
+    clip-path: polygon(0 0, 100% 48%, 100% 82%, 0 34%);
+    width: 6px;
+    height: 9px;
+    background-color: #393129;
+    position: absolute;
+    top: 18px;
+    left: -2px;
+}
+.main-section .row:nth-child(even) .main-content .main-txt .hypotenuse {
+    width: 37px;
+    border-top: 2px solid #393129;
+    transform: rotate(44.27deg);
+    position: absolute;
+    top: 102.5%;
+    left: -6.4px;
+}
+.main-section .row:nth-child(odd) .main-content .main-txt {
+    border-right: 2px solid #393129;
+    padding-right: 6.25vw;
+    position: relative;
+}
+.main-section .row:nth-child(odd) .main-content .main-txt .trapezoid--l {
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    width: 6px;
+    height: 22px;
+    background-color: #393129;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+}
+.main-section .row:nth-child(odd) .main-content .main-txt .trapezoid--s{
+    clip-path: polygon(0 48%, 100% 0, 100% 34%, 0 82%);
+    width: 6px;
+    height: 9px;
+    background-color: #393129;
+    position: absolute;
+    top: 18px;
+    right: -2px;
+}
+.main-section .row:nth-child(odd) .main-content .main-txt .hypotenuse {
+    width: 37px;
+    border-top: 2px solid #393129;
+    transform: rotate(-44.27deg);
+    position: absolute;
+    top: 102.7%;
+    right: -6.4px;
+}
+.main-txt h2, .main-txt p {
+    color: #393129;
+}
+.main-section .row {
+    margin-bottom: 60px;
+}
+.row-reverse { /*flex-row-reverse*/
+    flex-direction: row-reverse;
+}
+/*SHELTER三大特色區塊*/
+.featured-section {
+    background-color: #FFC52F;
+    width: 100%;
+    padding-bottom: 102px;
+}
+.featured-title > h2 {
+    margin-bottom: 18px;
+}
+.featured-title {
+    margin-bottom: 42px;
+}
+.cards-container--3 {
+    width: 73.125vw;
+    margin: 0px auto;
+    max-width: 1404px;
+    justify-content: center;
+}
+.featured-card {
+    margin-bottom: 50px;
+}
+.card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#earphone img{
+    transform: rotate(-9deg);
+    scale: 1.2;
+}
+.featured-title, .card-txt {
+    text-align: center;
+    color: #393129;
+}
+.card-txt {
+    margin-top: 20px;
+    padding: 0px 28px;
+}
+.card-txt h3 {
+    margin-bottom: 6px;
+}
+@media screen and (min-width: 768px) {
+    .cards-container--3 .row {
+        justify-content: space-between;
+    }
+    .cards-container--3 .row .col {
+        width: 23.125vw;
+    }
+}
+/*最新消息*/
+.news-section {
+    background-color: #FAF7F2;
+    padding: 68px 0px 58px;
+}
+.news-section h2 {
+    text-align: center;
+}
+.news-section .row {
+    margin: 50px 0px;
+}
+.news-card {
+    box-shadow: 0px 4px 20px 0 rgba(0, 0, 0, .15);
+    background-color: #FAF7F2;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.news-section .card-txt {
+    text-align: left;
+    padding: 0px 13px;
+}
+.news-section .card-time {
+    color: #A58D72;
+}
+.news-section .btn {
+    margin-left: auto;
+}
+/*如何前往SHELTER*/
+.route-planner-section {
+    width: 100%;
+    height: 100%;
+    background: url(images/concrete-wall-with-sunlight_dark-overlay.jpg) 0% 8% no-repeat;
+    padding: 70px 0px 47px;
+    position: relative;
+    background-size: cover;
+}
+.route-planner-container {
+    width: 73.125%;
+    margin: 0 auto;
+}
+.route-planner-section, .gudiance-block h2 {
+    color: #FAF7F2;
+}
+.gudiance-block h2 {
+    margin-bottom: 30px;
+}
+#drive-plan, #bus-plan, #MRT-plan {
+    display: none;
+    font-family: "Inter", Verdana, sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 1.6px;
+    line-height: 166%;
+    padding: 33px 22px;
+    border: 2px solid #FAF7F2;
+}
+#drive:checked ~ .route-gudiance #drive-plan, #bus:checked ~ .route-gudiance #bus-plan, 
+#MRT:checked ~ .route-gudiance #MRT-plan {
+    display: block;
+}
+#drive:checked ~ .transport-btn-wrapper label[for="drive"] .btn--stroke-white::before, #bus:checked ~ .transport-btn-wrapper label[for="bus"] .btn--stroke-white::before,#MRT:checked ~ .transport-btn-wrapper label[for="MRT"] .btn--stroke-white::before {
+    width: 97.6px;
+    height: 31.6px;
+    content: '';
+    position: absolute;
+    top: 1.2px;
+    right: 1.2px;
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    background-color: #FAF7F2;
+}
+#drive:checked ~ .transport-btn-wrapper label[for="drive"] .btn .font--btn, #bus:checked ~ .transport-btn-wrapper label[for="bus"] .btn .font--btn,#MRT:checked ~ .transport-btn-wrapper label[for="MRT"] .btn .font--btn {
+    color: #393129;
+}
+.transport-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px 28px;
+}
+.gudiance-block {
+    box-sizing: border-box;
+    padding-right: 67px;
+}
+.gudiance-block input {
+    display: none;
+}
+.route-map-container {
+    overflow: hidden;
+    aspect-ratio: 563/354;
+}
+.address-block {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 9px;
+    flex-wrap: wrap;
+}
+.address-info {
+    font-size: 0.916rem;
+    line-height: 140%;
+    letter-spacing: 2px;
+}
+.google-map-link a{
+    color: #FAF7F2;
+    font-family: "Aldrich", Verdana, sans-serif;
+    font-size: 0.75rem;
+    text-decoration: underline;
+}
+.google-map-link a img {
+    display: inline-block;
+    width: 0.75rem;
+    margin-left: 3px;
+}

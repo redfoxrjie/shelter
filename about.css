@@ -1,0 +1,188 @@
+.about-banner {
+    width: 100%;
+    height: 360px;
+    background-image: url(images/about_banner_s.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 20%;
+    position: relative;
+}
+.banner-overlay {
+    width: 100%;
+    height: 360px;
+    background-color: #000;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.about-banner h1 {
+    color: #FAF7F2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    text-align: center;
+    transform: translateX(-50%)
+}
+.banner-quote {
+    background-color: #FFC52F;
+    padding: 66px 0px;
+}
+.quote-block {
+    height: 158px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+}
+.banner-quote p {
+    font-family: "Inter", Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 36px;
+    letter-spacing: 2.4px;
+    font-weight: 500;
+    text-align: center;
+    align-self: center;
+}
+.quote-left {
+    content: 
+    url(images/icon_svg/quote-left-solid.svg);
+    width: 33px;
+    height: 38px;
+    align-self: flex-start;
+}
+.quote-right {
+    content: 
+    url(images/icon_svg/quote-right-solid.svg);
+    width: 33px;
+    height: 38px;
+    align-self: flex-end;
+}
+/*關於shelter內文*/
+.about-shelter-section {
+    background-color: #FAF7F2;
+    padding: 40px 0px 70px;
+}
+.section-container {
+    width: 73.125%;
+    margin: 0px auto;
+}
+.about-shelter-section .section-container .row {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.about-shelter-section .section-container .row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.text-block p {
+    margin-bottom: 18px;
+    color: #393129;
+}
+.text-block h3 {
+    margin-bottom: 26px;
+    line-height: 26px;
+}
+.pic-block-1, .pic-block-2, .pic-block-3 {
+    display: flex;
+    justify-content: space-between;
+}
+.pic-block-1 { height: 346px;}
+.pic-block-2 { height: 409px;}
+.pic-block-3 { height: 309px;}
+.pic-1-1 {
+    width: 158px;
+    align-self: flex-end;
+}
+.pic-1-2 {
+    width: 194px;
+    align-self: flex-start;
+}
+.pic-wrapper {
+    width: 203px;
+}
+.pic-2-1 {
+    width: 152px;
+    align-self: center;
+}
+.pic-2-2 {
+    width: 203px;
+    margin-bottom: 15px;
+}
+.pic-2-3 {
+    width: 203px;
+}
+.pic-3-1{
+    width: 180px;
+    align-self: flex-start;
+}
+.pic-3-2 {
+    width: 174px;
+    align-self: flex-end;
+}
+div[class^="pic-1-"] img, div[class^="pic-2-"] img, 
+div[class^="pic-3-"] img {
+    width: 100%;
+    display: inline-block;
+}
+.pic-2-2, .pic-2-3 {
+    width: 100%;
+}
+/*SHELTER三大特色區塊*/
+.featured-section {
+    background-color: #FAF7F2;
+    width: 100%;
+    padding-bottom: 102px;
+}
+.featured-title > h2 {
+    margin-bottom: 18px;
+}
+.featured-title {
+    margin-bottom: 42px;
+}
+.cards-container--3 {
+    width: 73.125vw;
+    margin: 0px auto;
+    max-width: 1404px;
+    justify-content: center;
+}
+.featured-card {
+    margin-bottom: 50px;
+}
+.card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#earphone img{
+    transform: rotate(-9deg);
+    scale: 1.2;
+}
+.featured-title, .card-txt {
+    text-align: center;
+    color: #393129;
+}
+.card-txt {
+    margin-top: 20px;
+    padding: 0px 28px;
+}
+.card-txt h3 {
+    margin-bottom: 6px;
+}
+@media screen and (min-width: 768px) {
+    .cards-container--3 .row {
+        justify-content: space-between;
+    }
+    .cards-container--3 .row .col {
+        width: 23.125vw;
+    }
+}
+.featured-section  .back-to-space .btn {
+    margin: 0px auto;
+}

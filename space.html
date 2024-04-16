@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHELTER－共享空間辦公室：逃離喧囂的世界，找回自己的寧靜</title>
+    <!-- style reset -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- RWD-style -->
+    <link rel="stylesheet" href="grid.css">
+    <!-- google font：inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- google font：Zen Kaku Gothic New -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <!-- google font：Karantina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <!-- google font：Aldrich -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <!-- custom-style-sheet -->
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="space.css">
+</head>
+<body>
+    <header>
+        <div class="logo-btn">
+            <a href="index.html">
+                <div class="logo-img-container">
+                    <img src="images/logo_rectangle.png" alt="shelter logo to main page">
+                </div>
+            </a>
+        </div>
+        <div class="btn-wrapper">
+            <div class="login-btn">
+                <a href="#">
+                    <div class="login-btn-container">會員登入</div>
+                </a>
+            </div>
+            <button id="menu-toggle">
+                <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
+            </button>
+            <nav id="site-menu">
+                <ul class="site-menu_list">
+                    <li class="site-menu_item"><a href="#">首頁</a></li>
+                    <li class="site-menu_item"><a href="#">關於我們</a></li>
+                    <li class="site-menu_item"><a href="#">最新消息</a></li>
+                    <li class="site-menu_item"><a href="#">空間介紹</a></li>
+                    <li class="site-menu_item"><a href="#">館內餐飲</a></li>
+                    <li class="site-menu_item"><a href="#">聯絡我們</a></li>
+                </ul>
+                <div class="social-icon-wrapper">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </nav>
+            <div id="overlay--black">
+            </div>
+        </div>
+    </header>
+    <div class="floor-map-section">
+        <div class="floor-map-container">
+            <input type="radio" id="office-block" name="floor-map" checked>
+            <input type="radio" id="opened-block" name="floor-map">
+            <input type="radio" id="shared-block" name="floor-map">
+            <div class="floor-map-title">
+                <h1>空間介紹</h1>
+                <p>透過將空間區分為辦公區、公共區與開放區，確保私人空間的隱蔽性，同時不降低共享資源所帶來的最佳效益。</p>
+            </div>
+            <div class="floor-map">
+                <img src="images/space_floor-map.svg" alt="shelter空間平面圖">
+                <div id="office-block-mark"></div>
+                <div id="opened-block-mark"></div>
+                <div id="shared-block-mark"></div>
+            </div>
+            <div class="map-btn-wrapper">
+                <h2 class="col-12 col-md-3">
+                    <span class="font--logo">SHELTER</span><br>
+                    空間平面圖
+                </h2>
+                <label for="office-block" class="col-4 col-md-2">
+                    <div class="btn btn--stroke-primary">
+                        <div class="font--btn">辦公區</div>
+                    </div>
+                </label>
+                <label for="opened-block" class="col-4 col-md-2">
+                    <div class="btn btn--stroke-primary">
+                        <div class="font--btn">開放區</div>
+                    </div>
+                </label>
+                <label for="shared-block" class="col-4 col-md-2">
+                    <div class="btn btn--stroke-primary">
+                        <div class="font--btn">公共區</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="room-section">
+        <div class="divider-wrapper">
+            <div class="divider--white"></div>
+            <div class="triangle--white"></div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col room-summary">
+                <div class="room-info">
+                    <div class="trapezoid--l"></div>
+                    <div class="trapezoid--s"></div>
+                    <div class="hypotenuse"></div>
+                    <h2>
+                        單人包廂辦公室
+                    </h2>
+                    <p class="font--subtitle">
+                        獨立的作業空間搭配符合人體工學的辦公桌椅與隔音牆面，給您滿滿的安定感，找回工作專注力
+                    </p>
+                    <ul>
+                        <li>共12間</li>
+                        <li>1.2坪/間</li>
+                        <li>無對外窗</li>
+                        <li>可調節色溫光源</li>
+                        <li>高抗噪藍芽耳機</li>
+                        <li>人體工學座椅</li>
+                    </ul>
+                    <div class="btn btn--stroke-primary">
+                        <a href="single-room.html" class="font--btn">MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="main-img-container" id="single">
+                    <img src="images/space_single-room_s.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-reverse">
+            <div class="col room-summary row-reverse">
+                <div class="room-info">
+                    <div class="trapezoid--l"></div>
+                    <div class="trapezoid--s"></div>
+                    <div class="hypotenuse"></div>
+                    <h2>
+                        中型包廂辦公室
+                    </h2>
+                    <p class="font--subtitle">
+                        可容納2至3人的獨立包廂，絕佳的隔音環境與寬敞桌面，不論是各自分工或小組討論均適合
+                    </p>
+                    <ul>
+                        <li>共6間</li>
+                        <li>2.4坪/間</li>
+                        <li>可延伸式桌面</li>
+                        <li>可調節色溫光源</li>
+                        <li>高抗噪藍芽耳機</li>
+                        <li>人體工學座椅</li>
+                    </ul>
+                    <div class="btn btn--stroke-primary">
+                        <a href="single-room.html" class="font--btn">MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="main-img-container"  id="double">
+                    <img src="images/space_double-room_s.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col room-summary">
+                <div class="room-info">
+                    <div class="trapezoid--l"></div>
+                    <div class="trapezoid--s"></div>
+                    <div class="hypotenuse"></div>
+                    <h2>
+                        大型包廂辦公室
+                    </h2>
+                    <p class="font--subtitle">
+                        可容納4-6人的獨立包廂與可隨意併排的桌面，方便以任何形式完成團隊任務；附設60吋液晶螢幕投影，提升溝通效率
+                    </p>
+                    <ul>
+                        <li>共4間</li>
+                        <li>4.8坪/間</li>
+                        <li>附設60吋液晶螢幕</li>
+                        <li>組合式小組工作桌</li>
+                        <li>移動式白板組</li>
+                        <li>舒適大沙發</li>
+                    </ul>
+                    <div class="btn btn--stroke-primary">
+                        <a href="single-room.html" class="font--btn">MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="main-img-container" id="group">
+                    <img src="images/space_team-room_s.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-reverse">
+            <div class="col room-summary row-reverse">
+                <div class="room-info">
+                    <div class="trapezoid--l"></div>
+                    <div class="trapezoid--s"></div>
+                    <div class="hypotenuse"></div>
+                    <h2>
+                        多功能會議室
+                    </h2>
+                    <p class="font--subtitle">
+                        可容納6至10人的氣派會議空間，配備投影機及觸控螢幕等多樣化的媒體播放設備，從簡報提案手到活動講座均能得心應手
+                    </p>
+                    <ul>
+                        <li>共2間</li>
+                        <li>6坪/間</li>
+                        <li>高亮度投影設備、觸控式大螢幕</li>
+                        <li>高度隔音門窗及吸音牆面</li>
+                        <li>人體工學座椅</li>
+                        <li>小冰箱、微波爐及飲料吧台</li>
+                    </ul>
+                    <div class="btn btn--stroke-primary">
+                        <a href="single-room.html" class="font--btn">MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="main-img-container"   id="meeting-room">
+                    <img src="images/space_meeting-room_s.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container row row-cols-1 row-cols-md-2">
+            <div class="social-media-bar col">
+                <div class="footer-logo">
+                    <img src="images/logo_rectangle.png" alt="">
+                </div>
+                <div class="social-media-icon">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </div>
+            <div class="legal-notice col">
+                <a href="#" id="privacy-policy">隱私權保護政策</a>
+                <a href="#" id="term">使用者條款</a>
+                <p>Ⓒ 2024 SHELTER-Capsule Office Co.,Ltd All Right Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function(){
+            document.getElementById('site-menu').classList.toggle('active');
+            document.getElementById('overlay--black').classList.toggle('active');
+        });
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('site-menu').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

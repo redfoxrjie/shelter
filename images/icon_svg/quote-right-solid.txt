@@ -1,0 +1,1 @@
+<i class="fa-solid fa-quote-right" style="color: #faf7f2;"></i>
