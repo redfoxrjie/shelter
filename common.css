@@ -275,6 +275,8 @@ header {
     transition-delay: 50ms;
 }
 #site-menu {
+    /* display: none; */
+    pointer-events: none;
     opacity: 0;
     position: fixed;
     top: 1.2vh;
@@ -296,9 +298,11 @@ header {
     /*點擊時顯示*/
 } 
 #site-menu ul li a, #site-menu div a {
+    display: none;
     pointer-events: none;
 }
 #site-menu.active ul li a, #site-menu div a {
+    display: block;
     pointer-events: auto;
 }
 #site-menu.active + #overlay--black {
