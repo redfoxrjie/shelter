@@ -56,6 +56,16 @@ a { text-decoration: none; color: #393129;}
     display: flex;
     align-items: center;
     position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+}
+.btn::before {
+    width: 97.6px;
+    height: 31.6px;
+    content: '';
+    position: absolute;
+    top: 1.2px;
+    right: 1.2px;
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
 }
 .btn .font--btn {
     width: 100%;
@@ -69,20 +79,20 @@ a { text-decoration: none; color: #393129;}
     text-decoration: none;
     z-index: 1;
 }
+/*btn-primary--regular*/
 .btn--stroke-primary {
     background-color: #393129; 
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
 }
 .btn--stroke-primary::before {
-    width: 97.6px;
-    height: 31.6px;
-    content: '';
-    position: absolute;
-    top: 1.2px;
-    right: 1.2px;
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
     background-color: #FAF7F2;
-} 
+}
+/*btn-primary--hover&click*/
+.btn--stroke-primary:hover::before{
+    background-color: #393129;
+}
+.btn--stroke-primary a:hover, .btn--stroke-primary a:active {
+    color: #FAF7F2;
+}
 .btn--stroke-white {
     background-color: #FAF7F2; 
     clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
@@ -183,12 +193,12 @@ header {
     font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
     font-weight: 500;
     font-size: 14px;
-    letter-spacing: 10%;
+    letter-spacing: 1px;
     text-align: center;
-    color: #393129;
+    color: #1E1002;
 }
 .login-btn-container {
-    padding: 18px 27px;
+    padding: 18px 24px;
 }
 #menu-toggle {
     width: 45px;
@@ -199,14 +209,36 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
     border: none;
+    gap: 4.8px;
+    position: relative;
+}
+#menu-toggle.active .menu-toggle__deco-bar:nth-child(2){
+    transform: scale(0);
+    transition: 0.3s;
+}
+#menu-toggle.active .menu-toggle__deco-bar:nth-child(odd){
+    position: absolute;
+    top: 50%;
+    left: 29%;
+    transition: 0.3s;
+    transition-delay: 0.1s;
+}
+#menu-toggle:not(.active) .menu-toggle__deco-bar:nth-child(2) {
+    transition-delay: 0.2s;
+}
+#menu-toggle.active .menu-toggle__deco-bar:nth-child(1) {
+    transform: rotate(40deg);
+}
+#menu-toggle.active .menu-toggle__deco-bar:nth-child(3){
+    transform: rotate(-40deg);
 }
 #menu-toggle:hover { cursor: pointer;}
 .menu-toggle__deco-bar {
     background-color: #FAF7F2;
-    width: 23px;
+    width: 20px;
     height: 1.8px;
+    transition: 0.4s;
 }
 .login-btn {
     width: 112px;
@@ -232,32 +264,43 @@ header {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
     pointer-events: none;
     z-index: 3;
 }
 #overlay--black.active {
-    display: block;
+    opacity: 1;
+    transition: opacity .4s ease;
+    transition-delay: 50ms;
 }
 #site-menu {
-    display: none;
-    /*預設隱藏*/
+    opacity: 0;
     position: fixed;
     top: 1.2vh;
     right: 1.35vw;
     min-width: 300px;
     width: 25vw;
-    height: 95vh;
+    height: 94vh;
     background-color: #FAF7F2;
     border-radius: 10px 0px 0px 10px;
     padding: 40px 20px 20px 40px;
     box-sizing: border-box;
     z-index: 4;
+    transition: opacity 0.3s ease;
 }
 #site-menu.active {
     display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
     /*點擊時顯示*/
 } 
+#site-menu ul li a, #site-menu div a {
+    pointer-events: none;
+}
+#site-menu.active ul li a, #site-menu div a {
+    pointer-events: auto;
+}
 #site-menu.active + #overlay--black {
     pointer-events: auto;
 }
@@ -265,7 +308,7 @@ header {
     z-index: 5;
 }
 .site-menu_item {
-    margin: 38px 0px;
+    margin: 20px 0px;
 }
 .site-menu_item a {
     font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
@@ -274,8 +317,11 @@ header {
     color: #393129;
     font-size: 1.125rem;
     position: relative;
+    display: block;
+    padding: 10px 10px;
+    transition: color 250ms;
 }
-.site-menu_item a:hover::before {
+.site-menu_item a::before {
     content: '';
     position: absolute;
     left: -16px;
@@ -285,6 +331,16 @@ header {
     background-image: url(images/icon_svg/menu-arrow--yellow.svg);
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 250ms;
+}
+.site-menu_item a:hover {
+    color: #FFC52F;
+    transition: color 250ms;
+}
+.site-menu_item a:hover::before {
+    opacity: 1;
+    transition: opacity 250ms;
 }
 .social-icon-wrapper {
     width: 30%;

@@ -46,6 +46,7 @@
             <button id="menu-toggle">
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
             </button>
             <nav id="site-menu">
                 <ul class="site-menu_list">
@@ -204,10 +205,11 @@
         document.getElementById('menu-toggle').addEventListener('click', function(){
             document.getElementById('site-menu').classList.toggle('active');
             document.getElementById('overlay--black').classList.toggle('active');
+            document.getElementById('menu-toggle').classList.toggle('active');
         });
-        document.getElementById('overlay').addEventListener('click', function() {
+        document.getElementById('overlay--black').addEventListener('click', function() {
             document.getElementById('site-menu').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
         });
     </script>
 </body>
