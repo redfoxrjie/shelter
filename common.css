@@ -22,7 +22,7 @@ a { text-decoration: none; color: #393129;}
 .font--card-title {
     font-family: "Inter", Verdana, sans-serif;
     font-size: 0.8rem;
-    line-height: 26px;
+    line-height: 22px;
     letter-spacing: 1px;
     font-weight: 400;
 }
@@ -57,6 +57,7 @@ a { text-decoration: none; color: #393129;}
     align-items: center;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    transition: .3s;
 }
 .btn::before {
     width: 97.6px;
@@ -78,6 +79,13 @@ a { text-decoration: none; color: #393129;}
     text-align: center;
     text-decoration: none;
     z-index: 1;
+}
+.btn a::after {
+    transition: .3s;
+}
+.btn:hover a::after {
+    transform: translateX(6px);
+    transition: .3s;
 }
 /*btn-primary--regular*/
 .btn--stroke-primary {
@@ -109,12 +117,17 @@ a { text-decoration: none; color: #393129;}
 }
 .btn--stroke-primary a {
     color: #393129;
+    position: relative;
+    padding-right: 10px;
 }
 .btn--stroke-primary a::after {
     content: '⇀';
     font-size: 16px;
-    margin-left: 2px;
-    display: inline;
+    display: inline-block;
+    position: absolute;
+    bottom: 30%;
+    right: 22%;
+    line-height: 10px;
 }
 .btn--filled-cta {
     background-color: #FFC52F; 
