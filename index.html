@@ -40,7 +40,7 @@
         <div class="btn-wrapper">
             <div class="login-btn">
                 <a href="#">
-                    <div class="login-btn-container">會員登入</div>
+                    <span class="login-btn-container">會員登入</span>
                 </a>
             </div>
             <button id="menu-toggle">
@@ -66,30 +66,66 @@
             <div id="overlay--black"></div>
         </div>
     </header>
-    <section class="slider-container">
-        <div class="slider-wrapper">
-            <div class="slider">
-                <img id="slide-1" src="images/slider_woman-happily-working-on-laptop_s.jpg" alt="woman happily working with her laptop">
-                <img id="slide-2" src="images/slider_woman-happily-working-on-laptop_s.jpg" alt="woman happily working with her laptop">
-                <img id="slide-3" src="images/slider_woman-happily-working-on-laptop_s.jpg" alt="woman happily working with her laptop">
-                <img id="slide-4" src="images/slider_woman-happily-working-on-laptop_s.jpg" alt="woman happily working with her laptop">
+    <section class="slides-section">
+        <div class="slideshow-container">
+            <div class="slides fade">
+                <img src="images/slider_woman-happily-working-on-laptop_s.jpg">
+                <div class="slide-page">01 / 04</div>
             </div>
-            <div class="slider-bullets">
-                <a href="#slide-1"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>
-                <a href="#slide-4"></a>
+            <div class="slides fade">
+                <img src="images/about_woman-writing-song_s.jpg">
+                <div class="slide-page">02 / 04</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/about_business-man-talking-on-the-phone_s.jpg">
+                <div class="slide-page">03 / 04</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/scene_teamworking_s.jpg">
+                <div class="slide-page">04 / 04</div>
+            </div>
+            <div class="dark-overlay"></div>
+            <div class="slide-deco">
+                <div class="deco-left">
+                    <div class="deco-left-top">
+                        <img src="images/deco/slider-deco_corner-line.svg" alt="">
+                    </div>
+                    <div class="deco-left-btm">
+                        <img src="images/deco/slider-deco_left-btm-line.svg" alt="">
+                    </div>
+                </div>
+                <div class="deco-right">
+                    <div class="deco-right-top">
+                        <img src="images/deco/slider-deco_right-up-line.svg" alt="">
+                    </div>
+                    <div class="deco-right-btm">
+                        <img src="images/deco/slider-deco_corner-line.svg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="slider-title-wrapper">
-            <div class="slider-title">
-                <img src="images/shelter-logo-text--white.png" alt="shelter capsule office">
-            </div>
-            <div class="slider-subtitle">逃離喧囂的世界，找回自己的寧靜</div>
-            <a href="space.html">
-                <div class="slider-cta-btn">立即預約</div>
-            </a>
+        <div class="dot-wrapper">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
+        <div class="slides-title">
+            <div class="slides-logo">
+                <img src="images/shelter-logo-text--white.png" alt="">
+                <div class="slide-txt font--subtitle">
+                    逃離喧囂的世界，找回自己的寧靜
+                </div>
+                <a href="#">
+                    <div class="cta-btn_slider">
+                        立即預約
+                        <div class="bg-slide"></div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        
     </section>
     <!-- SHELTER主簡介 -->
     <div class="main-section">
@@ -330,6 +366,28 @@
     </footer>
 
     <script>
+        //Slides
+        let slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            //先宣告完slide與dot為各自id
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            } 
+            //將所有幻燈片變成display:none
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }//將所有dots的active狀態移除
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].className += " active";
+            slideIndex++;
+            if (slideIndex > slides.length-1) { slideIndex = 0 ;}
+            setTimeout(showSlides, 5000);
+        }
+        //nav-toggle-n-list
         document.getElementById('menu-toggle').addEventListener('click', function(){
             document.getElementById('site-menu').classList.toggle('active');
             document.getElementById('overlay--black').classList.toggle('active');
@@ -338,6 +396,7 @@
         document.getElementById('overlay--black').addEventListener('click', function() {
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
+            document.getElementById('menu-toggle').classList.remove('active');
         });
     </script>
 </body>

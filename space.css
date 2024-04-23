@@ -60,7 +60,7 @@
     left: 0;
 }
 #office-block-mark { 
-    clip-path: polygon(0 0, 53% 0, 53% 66%, 0 66%);
+    clip-path: polygon(0 0, 89% 0, 89% 66%, 0 66%);
 }
 #opened-block-mark { 
     clip-path: polygon(88% 65%, 88% 0, 96% 0, 100% 100%, 55% 100%, 55% 65%);

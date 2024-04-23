@@ -202,16 +202,46 @@ header {
     padding: 12px 20px;
 }
 .logo-img-container img {width: 100%;}
+
+/*登入按鈕*/
+.login-btn {
+    /* width: 112px;
+    height: 45px; */
+    background-color: #FFC52F;
+    border-radius: 50px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: auto 0px;
+    overflow: hidden;
+}
 .login-btn a {
+    position: relative;
+}
+.login-btn a span::after {
+    content: '會員登入';
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    padding: 14px 24px;
+}
+.login-btn a span {
     font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
     text-align: center;
     color: #1E1002;
+    padding: 14px 24px;
+    display: block;
+    transition: .3s;
 }
-.login-btn-container {
-    padding: 18px 24px;
+.login-btn a:hover span{
+    translate: 0px -100%;
+    transition: .3s;
+}
+#menu-toggle, .login-btn {
+    z-index: 5;
 }
 #menu-toggle {
     width: 45px;
@@ -252,15 +282,6 @@ header {
     width: 20px;
     height: 1.8px;
     transition: 0.4s;
-}
-.login-btn {
-    width: 112px;
-    height: 45px;
-    background-color: #FFC52F;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .btn-wrapper {
     display: flex;
@@ -320,9 +341,6 @@ header {
 }
 #site-menu.active + #overlay--black {
     pointer-events: auto;
-}
-#menu-toggle, .login-btn {
-    z-index: 5;
 }
 .site-menu_item {
     margin: 20px 0px;
