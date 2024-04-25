@@ -51,17 +51,14 @@ a { text-decoration: none; color: #393129;}
 }
 /* button樣式 */
 .btn {
-    width: 100px;
-    height: 34px;
-    display: flex;
-    align-items: center;
+    width: 120px;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
     transition: .3s;
 }
 .btn::before {
-    width: 97.6px;
-    height: 31.6px;
+    width: 98%;
+    height: 93%;
     content: '';
     position: absolute;
     top: 1.2px;
@@ -69,21 +66,19 @@ a { text-decoration: none; color: #393129;}
     clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
 }
 .btn .font--btn {
-    width: 100%;
-    height: 100%;
     font-family: "Aldrich", Verdana, sans-serif;
-    font-size: 0.58rem;
-    display: block;
-    line-height: 34px;
+    font-size: 0.75rem;
     letter-spacing: 1px;
     text-align: center;
     text-decoration: none;
     z-index: 1;
+    padding: 12px 36px 10px 30px;
+    display: block;
 }
-.btn a::after {
+.btn .font--btn::after {
     transition: .3s;
 }
-.btn:hover a::after {
+.btn:hover .font--btn::after {
     transform: translateX(6px);
     transition: .3s;
 }
@@ -93,41 +88,41 @@ a { text-decoration: none; color: #393129;}
 }
 .btn--stroke-primary::before {
     background-color: #FAF7F2;
+    transition: background-color .3s;
 }
 /*btn-primary--hover&click*/
 .btn--stroke-primary:hover::before{
     background-color: #393129;
+    transition: background-color .3s;
 }
 .btn--stroke-primary a:hover, .btn--stroke-primary a:active {
     color: #FAF7F2;
 }
-.btn--stroke-white {
-    background-color: #FAF7F2; 
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
-}
-.btn--stroke-white::before {
-    width: 97.6px;
-    height: 31.6px;
-    content: '';
-    position: absolute;
-    top: 1.2px;
-    right: 1.2px;
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
-    background-color: #393129;
-}
 .btn--stroke-primary a {
     color: #393129;
     position: relative;
-    padding-right: 10px;
 }
 .btn--stroke-primary a::after {
     content: '⇀';
     font-size: 16px;
     display: inline-block;
     position: absolute;
-    bottom: 30%;
-    right: 22%;
-    line-height: 10px;
+    bottom: 14%;
+    right: 18%;
+}
+.btn--stroke-white {
+    background-color: #FAF7F2; 
+    /* clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%); */
+}
+.btn--stroke-white::before {
+    /* width: 97.6px;
+    height: 31.6px; */
+    content: '';
+    position: absolute;
+    top: 1.2px;
+    right: 1.2px;
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    background-color: #393129;
 }
 .btn--filled-cta {
     background-color: #FFC52F; 

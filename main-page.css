@@ -18,7 +18,7 @@ section.slides-section {
     bottom: 45%;
     right: 48px;
     transform: rotate(-90deg);
-    opacity: 0.5;
+    opacity: 0.7;
 }
 .slides img {
     vertical-align: middle;
@@ -352,11 +352,16 @@ section.slides-section {
     background-color: #FAF7F2;
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .news-section .card-txt {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     text-align: left;
-    padding: 0px 13px;
+    padding: 0px 13px 20px;
 }
 .news-section .card-time {
     color: #A58D72;
@@ -397,8 +402,8 @@ section.slides-section {
     display: block;
 }
 #drive:checked ~ .transport-btn-wrapper label[for="drive"] .btn--stroke-white::before, #bus:checked ~ .transport-btn-wrapper label[for="bus"] .btn--stroke-white::before,#MRT:checked ~ .transport-btn-wrapper label[for="MRT"] .btn--stroke-white::before {
-    width: 97.6px;
-    height: 31.6px;
+    /* width: 97.6px;
+    height: 31.6px; */
     content: '';
     position: absolute;
     top: 1.2px;
