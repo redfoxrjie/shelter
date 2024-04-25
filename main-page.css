@@ -402,13 +402,6 @@ section.slides-section {
     display: block;
 }
 #drive:checked ~ .transport-btn-wrapper label[for="drive"] .btn--stroke-white::before, #bus:checked ~ .transport-btn-wrapper label[for="bus"] .btn--stroke-white::before,#MRT:checked ~ .transport-btn-wrapper label[for="MRT"] .btn--stroke-white::before {
-    /* width: 97.6px;
-    height: 31.6px; */
-    content: '';
-    position: absolute;
-    top: 1.2px;
-    right: 1.2px;
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
     background-color: #FAF7F2;
 }
 #drive:checked ~ .transport-btn-wrapper label[for="drive"] .btn .font--btn, #bus:checked ~ .transport-btn-wrapper label[for="bus"] .btn .font--btn,#MRT:checked ~ .transport-btn-wrapper label[for="MRT"] .btn .font--btn {

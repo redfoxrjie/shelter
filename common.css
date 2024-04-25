@@ -71,6 +71,7 @@ a { text-decoration: none; color: #393129;}
     letter-spacing: 1px;
     text-align: center;
     text-decoration: none;
+    position: relative;
     z-index: 1;
     padding: 12px 36px 10px 30px;
     display: block;
