@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +16,25 @@
     <!-- google font：Zen Kaku Gothic New -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- google font：Karantina -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- google font：Aldrich -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- custom-style-sheet -->
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="main-page.css">
 </head>
+
 <body>
     <header>
         <div class="logo-btn">
@@ -38,16 +45,23 @@
             </a>
         </div>
         <div class="btn-wrapper">
-            <div class="login-btn">
-                <a href="#">
-                    <span class="login-btn-container">會員登入</span>
-                </a>
-            </div>
+            <!-- login-button -->
+            <btn class="login-btn" id="loginBtn">
+                <span class="login-btn-container" id="loginStatus">會員登入</span>
+            </btn>
+            <nav id="memberArea">
+                <ul>
+                    <a href="#"><li class="site-menu_item">會員資料</li></a>
+                    <li class="site-menu_item" id="logOut">登出</li>
+                </ul>
+            </nav>
+            <!-- nav-burger -->
             <button id="menu-toggle">
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
             </button>
+            <!-- nav-list -->
             <nav id="site-menu">
                 <ul class="site-menu_list">
                     <li class="site-menu_item"><a href="index.html">首頁</a></li>
@@ -64,6 +78,40 @@
                 </div>
             </nav>
             <div id="overlay--black"></div>
+        </div>
+        <!-- login-lightbox -->
+        <div id="login-lightbox" class="lightbox login">
+            <div class="lightbox-container">
+                <div id="lightboxCancel">
+                    <img src="images/icon_svg/xmark-solid--white.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="lightbox-title col-12 col-md-5">
+                        <div class="triangle--yw"></div>
+                        <h1>Login</h1>
+                        <h2>會員登入</h2>
+                    </div>
+                    <div class="input-section col-12 col-md-7">
+                        <form class="input-box" id="login-form">
+                            <div class="input-bar">
+                                Email：<input type="email" name="email" id="email">
+                            </div>
+                            <div class="input-bar">
+                                密 碼：<input type="password" name="password" id="password" maxlength="16" minlength="8">
+                            </div>
+                            <div class="login-btns">
+                                <button class="btn btn--stroke-primary">
+                                    <span>註冊會員</span>
+                                </button>
+                                <button type="submit" class="btn btn--filled-primary" id="btnLogin">
+                                    確認送出
+                                </button>
+                            </div>
+                            <button id="forgot-pswd">忘記密碼?</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <section class="slides-section">
@@ -116,16 +164,16 @@
                 <div class="slide-txt font--subtitle">
                     逃離喧囂的世界，找回自己的寧靜
                 </div>
-                <a href="#">
+                <a href="space.html">
                     <div class="cta-btn_slider">
                         立即預約
                         <div class="bg-slide"></div>
                     </div>
                 </a>
             </div>
-            
+
         </div>
-        
+
     </section>
     <!-- SHELTER主簡介 -->
     <div class="main-section">
@@ -148,7 +196,7 @@
                         在這裡，你是你自己的
                     </p>
                     <p>都市生活緊湊繁忙，同時也面臨著生活空間的侷限與個人空間的不足，使得生活壓力與日俱增。<br>
-                    SHELTER以提供具備私密、安靜的個人作業空間為理念，提供可專注投入作業的包廂式辦公室，讓身為高敏感族群的工作者也能安心工作，改善作業效率。
+                        SHELTER以提供具備私密、安靜的個人作業空間為理念，提供可專注投入作業的包廂式辦公室，讓身為高敏感族群的工作者也能安心工作，改善作業效率。
                     </p>
                     <div class="btn btn--stroke-primary">
                         <a href="about.html" class="font--btn">MORE</a>
@@ -220,7 +268,7 @@
             </div>
         </div>
     </div>
-<!--SHELTER三大特色-->
+    <!--SHELTER三大特色-->
     <div class="featured-section">
         <div class="divider-wrapper">
             <div class="divider--white"></div>
@@ -286,7 +334,8 @@
                 </a>
                 <a href="news/news-article.html">
                     <div class="col news-card">
-                        <div class="card-img"><img src="images/news_phone-on-a-rock-with-sakura-petals_s.jpg" alt=""></div>
+                        <div class="card-img"><img src="images/news_phone-on-a-rock-with-sakura-petals_s.jpg" alt="">
+                        </div>
                         <div class="card-txt">
                             <div class="card-time font--time">2024.03.01</div>
                             <div class="font--card-title">讓充滿新春氣息的音樂清單給你煥然一新的作業氛圍</div>
@@ -331,7 +380,10 @@
             </div>
             <div class="route-map-block col">
                 <div class="route-map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3614.518561820289!2d121.51624562479194!3d25.050407437631783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3442a9727d969f51%3A0xd0f3033a81203ed2!2z5Y-w5YyX5biC5Lit5q2j5Y2A5Y-w5YyX6LuK56uZ!3m2!1d25.0476133!2d121.5174062!4m5!1s0x3442a9694b87ba4b%3A0xa52a7fbbc03cb8d!2z5Y-w5YyX5biC5Lit5bGx5Y2A5Y2X5Lqs6KW_6Lev5paw5YWJ5LiJ6LaKIOWPsOWMl-WNl-ilv-W6l-S4gOmkqA!3m2!1d25.0523201!2d121.5210989!5e0!3m2!1szh-TW!2stw!4v1713089113052!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3614.518561820289!2d121.51624562479194!3d25.050407437631783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3442a9727d969f51%3A0xd0f3033a81203ed2!2z5Y-w5YyX5biC5Lit5q2j5Y2A5Y-w5YyX6LuK56uZ!3m2!1d25.0476133!2d121.5174062!4m5!1s0x3442a9694b87ba4b%3A0xa52a7fbbc03cb8d!2z5Y-w5YyX5biC5Lit5bGx5Y2A5Y2X5Lqs6KW_6Lev5paw5YWJ5LiJ6LaKIOWPsOWMl-WNl-ilv-W6l-S4gOmkqA!3m2!1d25.0523201!2d121.5210989!5e0!3m2!1szh-TW!2stw!4v1713089113052!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="address-block">
                     <div class="address-info">
@@ -339,7 +391,8 @@
                         <span>02-2345-6600</span>
                     </div>
                     <div class="google-map-link">
-                        <a href="https://maps.app.goo.gl/1TvhDnwRKt8ArZnL7" target="_blank">Google Map<img src="images/icon_svg/arrow-up-right-from-square-solid.svg"></a>
+                        <a href="https://maps.app.goo.gl/1TvhDnwRKt8ArZnL7" target="_blank">Google Map<img
+                                src="images/icon_svg/arrow-up-right-from-square-solid.svg"></a>
                     </div>
                 </div>
             </div>
@@ -376,7 +429,7 @@
             //先宣告完slide與dot為各自id
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
-            } 
+            }
             //將所有幻燈片變成display:none
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
@@ -384,20 +437,111 @@
             slides[slideIndex].style.display = "block";
             dots[slideIndex].className += " active";
             slideIndex++;
-            if (slideIndex > slides.length-1) { slideIndex = 0 ;}
+            if (slideIndex > slides.length - 1) { slideIndex = 0; }
             setTimeout(showSlides, 5000);
         }
         //nav-toggle-n-list
-        document.getElementById('menu-toggle').addEventListener('click', function(){
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
             document.getElementById('site-menu').classList.toggle('active');
             document.getElementById('overlay--black').classList.toggle('active');
             document.getElementById('menu-toggle').classList.toggle('active');
         });
-        document.getElementById('overlay--black').addEventListener('click', function() {
+        document.getElementById('overlay--black').addEventListener('click', function () {
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
             document.getElementById('menu-toggle').classList.remove('active');
         });
+        
+        //-----Login Page:function-----
+        let loginStatus = document.getElementById("loginStatus").textContent;
+        let lightBox = document.getElementById("login-lightbox");
+        let loginForm = document.getElementById('login-form');
+
+        function closeLightBox() {
+            clearData;
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        }
+        function checkData() {
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (loginForm.checkValidity()) {
+                    clearData();
+                    statusSwitch();
+                    closeLightBox();
+                }
+            });
+        }
+        function clearData() {
+            //將登入表單上的資料清空
+            document.getElementById("email").value = '';
+            document.getElementById("password").value = '';
+        }
+        function statusSwitch() {
+            if (loginStatus === '會員登入') {
+                document.getElementById("loginStatus").textContent = '會員專區';
+            }
+            else {
+                clearData();
+                document.getElementById("loginStatus").textContent = '會員登入';
+            }
+        }
+        //-----Login Page:login-----
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員登入') {
+                document.getElementById('site-menu').classList.remove('active');
+                document.getElementById('login-lightbox').classList.toggle('active');
+                document.getElementById('overlay--black').classList.toggle('active');
+            }
+        });
+        document.getElementById("lightboxCancel").addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('btnLogin').onclick = checkData;
+
+        //-----memberArea:會員專區-----
+        let memberArea = document.getElementById('memberArea');
+        let loginBtn = document.getElementById('loginBtn');
+
+        loginBtn.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        });
+        loginBtn.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        });
+        memberArea.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        })
+        memberArea.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        })
+        //-----Logout:登出-----
+        let logOut = document.getElementById('logOut');
+        logOut.addEventListener('click', function(){
+            clearData();
+            document.getElementById('loginStatus').textContent = '會員登入';
+            memberArea.style.display = "none";
+        })
     </script>
 </body>
+
 </html>
