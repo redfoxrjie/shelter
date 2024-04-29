@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHELTER－共享空間辦公室：逃離喧囂的世界，找回自己的寧靜</title>
+    <!-- style reset -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- RWD-style -->
+    <link rel="stylesheet" href="grid.css">
+    <!-- google font：inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- google font：Zen Kaku Gothic New -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- google font：Karantina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- google font：Aldrich -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- custom-style-sheet -->
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="dishes.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-btn">
+            <a href="index.html">
+                <div class="logo-img-container">
+                    <img src="images/logo_rectangle.png" alt="shelter logo to main page">
+                </div>
+            </a>
+        </div>
+        <div class="btn-wrapper">
+            <!-- login-button -->
+            <btn class="login-btn" id="loginBtn">
+                <span class="login-btn-container" id="loginStatus">會員登入</span>
+            </btn>
+            <nav id="memberArea">
+                <ul>
+                    <a href="#"><li class="site-menu_item">會員資料</li></a>
+                    <li class="site-menu_item" id="logOut">登出</li>
+                </ul>
+            </nav>
+            <!-- nav-burger -->
+            <button id="menu-toggle">
+                <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
+            </button>
+            <!-- nav-list -->
+            <nav id="site-menu">
+                <ul class="site-menu_list">
+                    <li class="site-menu_item"><a href="index.html">首頁</a></li>
+                    <li class="site-menu_item"><a href="about.html">關於我們</a></li>
+                    <li class="site-menu_item"><a href="news.html">最新消息</a></li>
+                    <li class="site-menu_item"><a href="space.html">空間介紹</a></li>
+                    <li class="site-menu_item"><a href="dishes.html">館內餐飲</a></li>
+                    <li class="site-menu_item"><a href="#">聯絡我們</a></li>
+                </ul>
+                <div class="social-icon-wrapper">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </nav>
+            <div id="overlay--black"></div>
+        </div>
+        <!-- login-lightbox -->
+        <div id="login-lightbox" class="lightbox login">
+            <div class="lightbox-container">
+                <div id="lightboxCancel">
+                    <img src="images/icon_svg/xmark-solid--white.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="lightbox-title col-12 col-md-5">
+                        <div class="triangle--yw"></div>
+                        <h1>Login</h1>
+                        <h2>會員登入</h2>
+                    </div>
+                    <div class="input-section col-12 col-md-7">
+                        <form class="input-box" id="login-form">
+                            <div class="input-bar">
+                                Email：<input type="email" name="email" id="email">
+                            </div>
+                            <div class="input-bar">
+                                密 碼：<input type="password" name="password" id="password" maxlength="16" minlength="8">
+                            </div>
+                            <div class="login-btns">
+                                <button class="btn btn--stroke-primary">
+                                    <span>註冊會員</span>
+                                </button>
+                                <button type="submit" class="btn btn--filled-primary" id="btnLogin">
+                                    確認送出
+                                </button>
+                            </div>
+                            <button id="forgot-pswd">忘記密碼?</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="page-title">
+            <h1>館内餐飲</h1>
+            <p>我們提供由營養師特別為現代都會人量身設計的精選菜單，從輕食、湯品、甜點到咖啡、飲品等多樣化餐點，讓無心顧及三餐均衡的你也能吃得健康，在忙裡偷閒的片刻也能獲得充分享受。</p>
+        </div>
+        <div class="menu">
+            <div class="menu-title">
+                <h2>MENU</h2>
+            </div>
+            <!---- 主餐 ---->
+            <div class="main-course row">
+                <div class="light-meal col-12 col-md-6">
+                    <h3><span class="icon"><img src="images/icon_svg/burger-solid.svg" alt="burger icon"></span>輕食</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">元氣燻雞堡</div>
+                                <div class="dish-intro">鮮嫩燻雞肉片與太陽蛋為早晨帶來滿滿朝氣</div>
+                            </div>
+                            <div class="price">$70</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">起司厚牛堡</div>
+                                <div class="dish-intro">火烤肉片搭配濃郁起司片給你味蕾大滿足</div>
+                            </div>
+                            <div class="price">$90</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">火腿青蔬蛋堡</div>
+                                <div class="dish-intro">鮮脆萵苣與香煎火腿開啟清爽的一天</div>
+                            </div>
+                            <div class="price">$50</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">總匯三明治</div>
+                                <div class="dish-intro">豐富美味又營養的高CP值輕食</div>
+                            </div>
+                            <div class="price">$75</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">墨西哥塔可餅</div>
+                                <div class="dish-intro">辣椒與番茄交織成的濃郁醬汁刺激你的味蕾</div>
+                            </div>
+                            <div class="price">$80</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">杏鮑菇烤米堡</div>
+                                <div class="dish-intro">香烤米飯與爽脆杏鮑菇給你低卡少負擔</div>
+                            </div>
+                            <div class="price">$80</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lunch-box col-12 col-md-6">
+                    <h3><span class="icon"><img src="images/icon_svg/lunch-box-solid.svg" alt="lunch box icon"></span>餐盒</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">水煮健康餐盒</div>
+                                <div class="dish-intro">沒時間健身，也要好好補充蛋白質</div>
+                            </div>
+                            <div class="price">$130</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">鮮蔬雞排飯</div>
+                                <div class="dish-intro">清炒蔬菜與香酥雞排讓您吮指回味</div>
+                            </div>
+                            <div class="price">$90</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">日式咖哩飯</div>
+                                <div class="dish-intro">濃郁咖哩與香甜白米飯給你簡單的美味</div>
+                            </div>
+                            <div class="price">$100</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">櫻花蝦炒飯</div>
+                                <div class="dish-intro">滿滿海味與蛋黃香氣為疲憊的你注入活力</div>
+                            </div>
+                            <div class="price">$120</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">番茄蛋包飯</div>
+                                <div class="dish-intro">自製番茄醬搭配滑嫩蛋包飯找回單純美味</div>
+                            </div>
+                            <div class="price">$100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---- 附餐&湯品 ---->
+            <div class="side-dish row">
+                <div class="salad col-12 col-md-4">
+                    <h3><span class="icon"><img src="images/icon_svg/salad-solid.svg" alt="salad icon"></span>沙拉</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">和風野菜沙拉</div>
+                            </div>
+                            <div class="price">$50</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">水果優格沙拉</div>
+                            </div>
+                            <div class="price">$90</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">泰式嫩雞沙拉</div>
+                            </div>
+                            <div class="price">$90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="snack col-12 col-md-4">
+                    <h3><span class="icon"><img src="images/icon_svg/hotdog-solid.svg" alt="hotdog icon"></span>點心</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">黃金脆薯</div>
+                            </div>
+                            <div class="price">$50</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">月亮蝦餅</div>
+                            </div>
+                            <div class="price">$60</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">炸物拼盤</div>
+                            </div>
+                            <div class="price">$100</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">台式熱狗捲</div>
+                            </div>
+                            <div class="price">$50</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="soup col-12 col-md-4">
+                    <h3><span class="icon"><img src="images/icon_svg/bowl-of-soup-solid.svg" alt="a bowl of soup icon"></span>湯品</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">匈牙利牛肉湯</div>
+                            </div>
+                            <div class="price">$80</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">義式蔬菜湯</div>
+                            </div>
+                            <div class="price">$70</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">鮮味蛤蜊湯</div>
+                            </div>
+                            <div class="price">$60</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">玉米濃湯</div>
+                            </div>
+                            <div class="price">$50</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---- 飲品&甜點 ---->
+            <div class="drinks row">
+                <div class="coffee col-12 col-md-4">
+                    <h3><span class="icon"><img src="images/icon_svg/mug-hot-solid.svg" alt="a cup of hot coffee"></span>手沖咖啡</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">頂級莊園AA</div>
+                            </div>
+                            <div class="price">$100</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">耶加雪菲</div>
+                            </div>
+                            <div class="price">$110</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">奶酒甜香特選豆</div>
+                            </div>
+                            <div class="price">$120</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">肯亞日曬</div>
+                            </div>
+                            <div class="price">$100</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">荔香日曬蜜處理</div>
+                            </div>
+                            <div class="price">$130</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="soft-drink col-12 col-md-4">
+                    <h3><span class="icon"><img src="images/icon_svg/bottle-droplet-solid.svg" alt="bottle icon"></span>手搖飲品</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">莓果氣泡派對</div>
+                            </div>
+                            <div class="price">$90</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">奇異鳳梨冰茶</div>
+                            </div>
+                            <div class="price">$85</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">青檸芒果冰沙</div>
+                            </div>
+                            <div class="price">$75</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">珍珠鮮奶茶</div>
+                            </div>
+                            <div class="price">$60</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">暖心黑糖薑茶</div>
+                            </div>
+                            <div class="price">$65</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sweets col-12 col-md-4">
+                    <h3><span class="icon"><img src="images/icon_svg/cookie-solid.svg" alt="cookie icon"></span>甜點</h3>
+                    <div class="dish-list">
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">雙餡日式泡芙</div>
+                            </div>
+                            <div class="price">$50</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">巧克力蒙布朗</div>
+                            </div>
+                            <div class="price">$80</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">手作千層蛋糕</div>
+                            </div>
+                            <div class="price">$70</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">水果生乳捲</div>
+                            </div>
+                            <div class="price">$65</div>
+                        </div>
+                        <div class="dish-item">
+                            <div class="dish-text">
+                                <div class="dish-name">手工餅乾</div>
+                            </div>
+                            <div class="price">$40</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container row row-cols-1 row-cols-md-2">
+            <div class="social-media-bar col">
+                <div class="footer-logo">
+                    <img src="images/logo_rectangle.png" alt="">
+                </div>
+                <div class="social-media-icon">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </div>
+            <div class="legal-notice col">
+                <a href="#" id="privacy-policy">隱私權保護政策</a>
+                <a href="#" id="term">使用者條款</a>
+                <p>Ⓒ 2024 SHELTER-Capsule Office Co.,Ltd All Right Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //nav-toggle-n-list
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('site-menu').classList.toggle('active');
+            document.getElementById('overlay--black').classList.toggle('active');
+            document.getElementById('menu-toggle').classList.toggle('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('site-menu').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+            document.getElementById('menu-toggle').classList.remove('active');
+        });
+        
+        //-----Login Page:function-----
+        let loginStatus = document.getElementById("loginStatus").textContent;
+        let lightBox = document.getElementById("login-lightbox");
+        let loginForm = document.getElementById('login-form');
+
+        function closeLightBox() {
+            clearData;
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        }
+        function checkData() {
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (loginForm.checkValidity()) {
+                    clearData();
+                    statusSwitch();
+                    closeLightBox();
+                }
+            });
+        }
+        function clearData() {
+            //將登入表單上的資料清空
+            document.getElementById("email").value = '';
+            document.getElementById("password").value = '';
+        }
+        function statusSwitch() {
+            if (loginStatus === '會員登入') {
+                document.getElementById("loginStatus").textContent = '會員專區';
+            }
+            else {
+                clearData();
+                document.getElementById("loginStatus").textContent = '會員登入';
+            }
+        }
+        //-----Login Page:login-----
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員登入') {
+                document.getElementById('site-menu').classList.remove('active');
+                document.getElementById('login-lightbox').classList.toggle('active');
+                document.getElementById('overlay--black').classList.toggle('active');
+            }
+        });
+        document.getElementById("lightboxCancel").addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('btnLogin').onclick = checkData;
+
+        //-----memberArea:會員專區-----
+        let memberArea = document.getElementById('memberArea');
+        let loginBtn = document.getElementById('loginBtn');
+
+        loginBtn.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        });
+        loginBtn.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        });
+        memberArea.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        })
+        memberArea.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        })
+        //-----Logout:登出-----
+        let logOut = document.getElementById('logOut');
+        logOut.addEventListener('click', function(){
+            clearData();
+            document.getElementById('loginStatus').textContent = '會員登入';
+            memberArea.style.display = "none";
+        })
+    </script>
+</body>
+</html>
