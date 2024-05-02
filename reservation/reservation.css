@@ -1,0 +1,306 @@
+body {background-color: #FAF7F2;}
+.booking-page-container {
+    width: 73.125%;
+    margin: 100px auto 134px;
+}
+/*----頁面大標---*/
+.title {
+    border-top: 2px solid #393129;
+    border-bottom: 2px solid #393129;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 40px 20px;
+}
+.title h1 {margin-bottom: 20px;}
+
+/*----進度條---*/
+.progress-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.step-wrapper {
+    margin: 0px 12px;
+    display: inline-block;
+}
+.step-wrapper .progress-bar {
+    width: 56px;
+    height: 4px;
+    background-color: #A58D72;
+    margin-bottom: 14px;
+}
+.step-wrapper .now-step-bar {
+    background-color: #FFC52F;
+    height: 8px;
+}
+.step-wrapper .step {
+    font-family: "Inter", Verdana, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.6px;
+    color: #393129;
+}
+
+/*----表格區塊---*/
+.rent-data-block {margin: 40px 0px;}
+.rent-data-block h2, .payment-block h2 {
+    font-family: Inter, Verdana, sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 9px;
+}
+.rent-data-block .font--subtitle {
+    color: #393129;
+    letter-spacing: 1.8px;
+}
+.rent-data, .rent-days {margin-bottom: 40px;}
+.rent-data h3, .rent-days h3 {margin: 18px 0px;}
+.rent-data h3::before, .rent-days h3::before {
+    content: "■";
+    margin-right: 7px;
+}
+.booking-form .input-bar {
+    width: 70%;
+    color: #393129;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: Inter, Verdana, sans-serif;
+    letter-spacing: 2px;
+    line-height: 140%;
+    border-bottom: solid 1.5px #393129;
+    padding: 9px 0px;
+    margin-bottom: 37px;
+    display: flex;
+}
+.booking-form .input-bar input {
+    flex-grow: 1;
+    border: none;
+    background-color: unset;
+    font-size: 1rem;
+}
+.booking-form .input-bar input:focus {outline: none;}
+.required {color: #FFC52F;}
+
+/*日期選擇*/
+.rent-days {width: 70%;}
+input[type="date"] {
+    font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
+    font-size: 0.875rem;
+    font-weight: light;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 0px;
+    border: 1px solid #393129;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FAF7F2;
+}
+.day-selector {
+    width: 80%;
+    margin: 8px 0px;
+}
+.day-selector h4 {
+    margin-bottom: 8px;
+    width: fit-content;
+}
+/*房型照片*/
+.room-img {
+    width: 76%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin: 40px 0px 40px auto;
+}
+.room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*金額小計*/
+.subtotal {
+    border-top: 1px solid #393129;
+    box-sizing: border-box;
+    padding: 40px 0px;
+}
+.last-row {
+    border-bottom: 2px solid #393129;
+}
+.subtotal-list {width: 70%;}
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0px;
+}
+.list-item .item-name {
+    font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
+    font-weight: medium;
+    letter-spacing: 1px;
+}
+.item-unit {
+    font-family: "Aldrich", Verdana, sans-serif;
+}
+.item-unit span {
+    color: #A58D72;
+    margin-left: 4px;
+}
+.item-name, .item-unit {
+    font-size: 0.88rem;
+    color: #393129;
+}
+/*按鈕*/
+.step-btns, .payment-btns {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.step-btns .btn, .payment-btns .btn {
+    margin-left: 20px;
+    margin-top: auto;
+    height: fit-content;
+}
+.payment-btns .btn {
+    margin-right: 20px;
+    margin-left: 0px;
+}
+.btn--filled-primary a{color: #FAF7F2;}
+.btn--filled-primary a::after {
+    content: '⇀';
+    font-size: 16px;
+    display: inline-block;
+    position: absolute;
+    bottom: 14%;
+    right: 18%;
+}
+.btn--filled-primary:hover  a{color: #393129;}
+.btn--stroke-primary a::after {content: '';}
+
+/*租借設備卡片*/
+.device-card-wrapper {
+    width: 100%;
+    display: flex;
+    margin: 40px 0px;
+}
+.device-card {
+    background-color: #FAF7F2;
+    width: 23%;
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, .2) ;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 24px;
+}
+.device-card:nth-child(2) .device-img img{
+    object-fit: cover;
+    width: 100%;
+    object-position: 0% 70%;
+
+}
+.device-img {
+    width:  100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+}
+.device-img img{
+    width: 100%;
+    height: 100%;
+    
+}
+.device-txt {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px 0px;
+}
+.device-txt ul {
+    margin: 12px auto;
+    width: fit-content;
+}
+.device-txt ul li {
+    list-style: disc;
+    list-style-position: inside;
+    font-size: 0.75rem;
+    line-height: 22px;
+    text-align: left;
+    color: #393129;
+}
+.device-count {
+    width: fit-content;
+    margin: 0px auto;
+}
+.device-count input[type="text"] {
+    text-align: center;
+    width: 40px;
+    border: 1px solid #A58D72;
+    padding: 4px 0px;
+}
+.device-count input[type="button"] {
+    border: unset;
+    background-color: unset;
+    font-size: 1rem;
+    color: #A58D72;
+    cursor: pointer;
+}
+.device-count input[type="button"]:hover {
+    color: #393129;
+}
+.device-txt .item-unit {
+    margin: 12px 0px;
+}
+ul.rental-guidence {
+    list-style-type: none;
+    margin: 9px 0px 52px;
+}
+ul.rental-guidence li {
+    color: #A58D72;
+    font-size: 0.75rem;
+    font-family: "Inter", Verdana, sans-serif;
+    letter-spacing: 1.8px;
+    line-height: 20px;
+}
+ul.rental-guidence li::before {content: "※";}
+.confirm-btns-row .step-btns {margin-top: 40px;}
+.payment-block .payment-btns {
+    height: auto;
+    margin-top: 18px;
+}
+.payment-btns .btn--filled-primary a::after {
+    content: '';
+}
+.rent-data ul li {
+    font-family: "Inter", Verdana, sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.15rem;
+    line-height: 130%;
+    font-weight: 400;
+}
+.rent-data ul li:not(:last-child) {
+    margin-bottom: 18px;
+}
+.btn-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.payment-btns .btn a .credit-card{
+    background: url(../images/icon_svg/credit-card-regular.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.payment-btns .btn a:hover .credit-card{
+    background: url(../images/icon_svg/credit-card-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.payment-btns .btn a .cash {
+    background: url(../images/icon_svg/money-bill-solid--white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.payment-btns .btn a:hover .cash {
+    background: url(../images/icon_svg/money-bill-solid--regular.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.payment-btns .btn a {
+    padding: 12px;
+}

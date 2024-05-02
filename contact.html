@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHELTER－共享空間辦公室：逃離喧囂的世界，找回自己的寧靜</title>
+    <!-- style reset -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- RWD-style -->
+    <link rel="stylesheet" href="grid.css">
+    <!-- google font：inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- google font：Zen Kaku Gothic New -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- google font：Karantina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- google font：Aldrich -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- custom-style-sheet -->
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-btn">
+            <a href="index.html">
+                <div class="logo-img-container">
+                    <img src="images/logo_rectangle.png" alt="shelter logo to main page">
+                </div>
+            </a>
+        </div>
+        <div class="btn-wrapper">
+            <!-- login-button -->
+            <btn class="login-btn" id="loginBtn">
+                <span class="login-btn-container" id="loginStatus">會員登入</span>
+            </btn>
+            <nav id="memberArea">
+                <ul>
+                    <a href="#">
+                        <li class="site-menu_item">會員資料</li>
+                    </a>
+                    <li class="site-menu_item" id="logOut">登出</li>
+                </ul>
+            </nav>
+            <!-- nav-burger -->
+            <button id="menu-toggle">
+                <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
+                <div class="menu-toggle__deco-bar"></div>
+            </button>
+            <!-- nav-list -->
+            <nav id="site-menu">
+                <ul class="site-menu_list">
+                    <li class="site-menu_item"><a href="index.html">首頁</a></li>
+                    <li class="site-menu_item"><a href="about.html">關於我們</a></li>
+                    <li class="site-menu_item"><a href="news.html">最新消息</a></li>
+                    <li class="site-menu_item"><a href="space.html">空間介紹</a></li>
+                    <li class="site-menu_item"><a href="dishes.html">館內餐飲</a></li>
+                    <li class="site-menu_item"><a href="#">聯絡我們</a></li>
+                </ul>
+                <div class="social-icon-wrapper">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </nav>
+            <div id="overlay--black"></div>
+        </div>
+        <!-- login-lightbox -->
+        <div id="login-lightbox" class="lightbox login">
+            <div class="lightbox-container">
+                <div id="lightboxCancel">
+                    <img src="images/icon_svg/xmark-solid--white.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="lightbox-title col-12 col-md-5">
+                        <div class="triangle--yw"></div>
+                        <h1>Login</h1>
+                        <h2>會員登入</h2>
+                    </div>
+                    <div class="input-section col-12 col-md-7">
+                        <form class="input-box" id="login-form">
+                            <div class="input-bar">
+                                Email：<input type="email" name="email" id="email">
+                            </div>
+                            <div class="input-bar">
+                                密 碼：<input type="password" name="password" id="password" maxlength="16" minlength="8">
+                            </div>
+                            <div class="login-btns">
+                                <button class="btn btn--stroke-primary">
+                                    <span>註冊會員</span>
+                                </button>
+                                <button type="submit" class="btn btn--filled-primary" id="btnLogin">
+                                    確認送出
+                                </button>
+                            </div>
+                            <button id="forgot-pswd">忘記密碼?</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!------Contact Form----->
+    <div class="contact">
+        <div class="lightbox-container">
+            <div class="row">
+                <div class="lightbox-title col-12 col-md-5">
+                    <div class="triangle--yw"></div>
+                    <h1>Get In Touch</h1>
+                    <h2>聯絡我們</h2>
+                    <p>請填寫表單，我們將盡快與您聯繫。</p>
+                    <div class="info-block">
+                        <div class="info-line">
+                            <div class="info-icon">
+                                <img src="images/icon_svg/envelope-solid.svg" alt="">
+                            </div>
+                            <div class="info-text">service@shelter.com</div>
+                        </div>
+                        <div class="info-line">
+                            <div class="info-icon">
+                                <img src="images/icon_svg/phone-solid.svg" alt="">
+                            </div>
+                            <div class="info-text">02-2345-6600</div>
+                        </div>
+                        <div class="info-line">
+                            <div class="info-icon">
+                                <img src="images/icon_svg/building-solid.svg" alt="">
+                            </div>
+                            <div class="info-text">10419台北市中山區避世路19號6樓</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-section col-12 col-md-7">
+                    <form class="input-box">
+                        <div class="input-select">
+                            詢問類別<span class="required">*</span>
+                            <select name="q-type" required id="hidden-select">
+                                <option value="guide" disabled selected>---請選擇類別---<span class="dropdown-arrow"></span>
+                                </option>
+                                <option value="rental-n-payment">合約及款項相關</option>
+                                <option value="dishes-feedback">館內餐飲相關</option>
+                                <option value="customer-complaint">客戶服務相關</option>
+                                <option value="facilities">設施及器材相關</option>
+                            </select>
+                        </div>
+                        <div class="input-bar">
+                            姓名<span class="required">*</span><input type="text" name="name" id="name" minlength="2" required>
+                        </div>
+                        <div class="input-bar">
+                            電話<span class="required">*</span><input type="tel" name="tel" maxlength="16" minlength="8"
+                                id="tel" required>
+                        </div>
+                        <div class="input-bar">
+                            E-mail<input type="email" name="email" id="email">
+                        </div>
+                        <div class="input-bar" required>
+                            主旨<span class="required">*</span><input type="text" name="subject" id="subject">
+                        </div>
+                        <div class="text-area">
+                            內容<br><textarea name="message" id="message" maxlength="300"></textarea>
+                        </div>
+                        <div class="login-btns">
+                            <div class="btn btn--stroke-primary">
+                                <a class="font--btn">註冊會員</a>
+                            </div>
+                            <button type="submit" class="btn btn--filled-primary">
+                                確認送出
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container row row-cols-1 row-cols-md-2">
+            <div class="social-media-bar col">
+                <div class="footer-logo">
+                    <img src="images/logo_rectangle.png" alt="">
+                </div>
+                <div class="social-media-icon">
+                    <a href="" class="social-icon--sm instagram"></a>
+                    <a href="" class="social-icon--sm facebook"></a>
+                    <a href="" class="social-icon--sm line"></a>
+                </div>
+            </div>
+            <div class="legal-notice col">
+                <a href="#" id="privacy-policy">隱私權保護政策</a>
+                <a href="#" id="term">使用者條款</a>
+                <p>Ⓒ 2024 SHELTER-Capsule Office Co.,Ltd All Right Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //nav-toggle-n-list
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('site-menu').classList.toggle('active');
+            document.getElementById('overlay--black').classList.toggle('active');
+            document.getElementById('menu-toggle').classList.toggle('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('site-menu').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+            document.getElementById('menu-toggle').classList.remove('active');
+        });
+
+        //-----Login Page:function-----
+        let loginStatus = document.getElementById("loginStatus").textContent;
+        let lightBox = document.getElementById("login-lightbox");
+        let loginForm = document.getElementById('login-form');
+
+        function closeLightBox() {
+            clearData;
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        }
+        function checkData() {
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (loginForm.checkValidity()) {
+                    clearData();
+                    statusSwitch();
+                    closeLightBox();
+                }
+            });
+        }
+        function clearData() {
+            //將登入表單上的資料清空
+            document.getElementById("email").value = '';
+            document.getElementById("password").value = '';
+        }
+        function statusSwitch() {
+            if (loginStatus === '會員登入') {
+                document.getElementById("loginStatus").textContent = '會員專區';
+            }
+            else {
+                clearData();
+                document.getElementById("loginStatus").textContent = '會員登入';
+            }
+        }
+        //-----Login Page:login-----
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員登入') {
+                document.getElementById('site-menu').classList.remove('active');
+                document.getElementById('login-lightbox').classList.toggle('active');
+                document.getElementById('overlay--black').classList.toggle('active');
+            }
+        });
+        document.getElementById("lightboxCancel").addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('btnLogin').onclick = checkData;
+
+        //-----memberArea:會員專區-----
+        let memberArea = document.getElementById('memberArea');
+        let loginBtn = document.getElementById('loginBtn');
+
+        loginBtn.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        });
+        loginBtn.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        });
+        memberArea.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        })
+        memberArea.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        })
+        //-----Logout:登出-----
+        let logOut = document.getElementById('logOut');
+        logOut.addEventListener('click', function () {
+            clearData();
+            document.getElementById('loginStatus').textContent = '會員登入';
+            memberArea.style.display = "none";
+        })
+    </script>
+</body>
+
+</html>

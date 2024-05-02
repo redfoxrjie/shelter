@@ -1,9 +1,13 @@
+body {
+    background-color: #FAF7F2;
+}
 @media screen and (min-width: 768px) {
     .container {
         width: 73.125vw;
     }
 }
 .page-title {
+    color: #393129;
     text-align: center;
     margin: 100px 0px 40px;
     padding: 0px 80px;
