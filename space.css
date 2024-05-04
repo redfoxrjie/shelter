@@ -41,6 +41,10 @@
     align-items: flex-end;
     margin: 30px 0px 0px;
 }
+.map-btn-wrapper .btn:hover .font--btn{
+    color: #FAF7F2;
+    transition: 0.3s;
+}
 .map-btn-wrapper h2{
     margin-bottom: 30px;
 }
@@ -50,14 +54,14 @@
     }
 }
 #office-block-mark, #opened-block-mark, #shared-block-mark {
-    display: none;
     background-color: #FFC52F;
-    opacity: .2;
+    opacity: 0;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    transition: .5s
 }
 #office-block-mark { 
     clip-path: polygon(0 0, 89% 0, 89% 66%, 0 66%);
@@ -68,10 +72,10 @@
 #shared-block-mark {
     clip-path: polygon(0 65%, 28% 65%, 28% 100%, 0 100%);
 }
-
 #office-block:checked ~ .floor-map #office-block-mark, #opened-block:checked ~ .floor-map #opened-block-mark, 
 #shared-block:checked ~ .floor-map #shared-block-mark {
-    display: block;
+    opacity: .2;
+    transition: .5s;
 }
 #office-block:checked ~ .map-btn-wrapper label[for="office-block"] .btn--stroke-white::before, #opened-block:checked ~ .map-btn-wrapper label[for="opened-block"] .btn--stroke-white::before,#shared-block:checked ~ .map-btn-wrapper label[for="shared-block"] .btn--stroke-white::before {
     width: 97.6px;

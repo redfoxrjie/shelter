@@ -121,7 +121,7 @@
 }
 .price-select {
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
 }
 .single-room-intro {
     box-sizing: border-box;
@@ -212,8 +212,8 @@
 }
 .plan-content {
     color: #A58D72;
-    padding: 0px 24px 32px;
-    margin-top: 50px;
+    padding: 0px 26px;
+    margin: 50px auto;
 }
 .plan-content ul li {
     font-family: "Inter", Verdana, sans-serif;
@@ -245,12 +245,9 @@
     margin-left: 10px;
 }
 .plan-content .btn {
-    width: 18.9vw;
+    margin: 0px auto;
+    width: 100%;
     height: 34px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 20px;
 }
 .plan-content .btn--stroke-secondary { 
     clip-path: polygon(0 0,100% 0, 100% 78%, 92% 100%, 0% 100%);
@@ -280,4 +277,23 @@
 }
 .back-to-space .btn {
     margin: 0px auto;
+}
+.price-select .btn a:hover {
+    color: #1E1002;
+}
+#typeBox {
+    border: 1px solid #A58D72;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.show-list {
+    display: block;
+}
+.type-item {
+    cursor: pointer;
 }

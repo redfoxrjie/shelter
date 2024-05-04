@@ -163,7 +163,7 @@ input[type="date"] {
 .btn--filled-primary a{color: #FAF7F2;}
 .btn--filled-primary a::after {
     content: '⇀';
-    font-size: 16px;
+    font-size: 1rem
     display: inline-block;
     position: absolute;
     bottom: 14%;
@@ -301,6 +301,20 @@ ul.rental-guidence li::before {content: "※";}
     background-repeat: no-repeat;
     background-size: contain;
 }
-.payment-btns .btn a {
+.payment-btns .btn a, .back-to-main .btn a {
     padding: 12px;
+}
+.back-to-main .btn {
+    margin: 70px auto;
+}
+.back-to-main .btn a .return-icon{
+    background: url(../images/icon_svg/return--primary.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 4px;
+}
+.back-to-main .btn a:hover .return-icon{
+    background: url(../images/icon_svg/return--white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }

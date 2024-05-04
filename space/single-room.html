@@ -97,13 +97,17 @@
                     </ul>
                 </div>
                 <div class="price-select">
-                    <select name="single-room" id="single-room">
-                        <option value="day-sg">日租型︱700元/天</option>
-                        <option value="week-sg">週租型︱3,000元/5天</option>
-                        <option value="month-sg">月租型︱15,000元/30天</option>
-                    </select>
+                    
+                    <div id="rentType">
+                        <div id="typeBox"></div>
+                        <div id="typeList" class="hidden">
+                            <div class="type-item">日租型︱700元/天</div>
+                            <div class="type-item">週租型︱3,000元/5天</div>
+                            <div class="type-item">月租型︱15,000元/30天</div>
+                        </div>
+                    </div>
                     <div class="btn btn--filled-cta">
-                        <a href="#" class="font--btn">立即預約</a>
+                        <a href="../reservation/01_dates.html" class="font--btn">立即預約</a>
                     </div>
                 </div>
             </div>
@@ -239,7 +243,7 @@
                         <div class="card-head">
                             <div class="color-bar"></div>
                             <div class="color-round">
-                                <img src="../images/icon_svg/calendar-day-solid.svg" alt="">
+                                <img src="../images/icon_svg/calendar-day-solid--secondary.svg" alt="">
                             </div>
                         </div>
                         <div class="plan-content">
@@ -263,7 +267,7 @@
                         <div class="card-head">
                             <div class="color-bar"></div>
                             <div class="color-round">
-                                <img src="../images/icon_svg/calendar-week-solid.svg" alt="">
+                                <img src="../images/icon_svg/calendar-week-solid--secondary.svg" alt="">
                             </div>
                         </div>
                         <div class="plan-content">
@@ -288,7 +292,7 @@
                         <div class="card-head">
                             <div class="color-bar"></div>
                             <div class="color-round">
-                                <img src="../images/icon_svg/calendar-days-regular.svg" alt="">
+                                <img src="../images/icon_svg/calendar-days-regular--secondary.svg" alt="">
                             </div>
                         </div>
                         <div class="plan-content">
@@ -345,6 +349,49 @@
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
         });
+
+        //預設「首項」為selected狀態
+        //typeBox顯示預選的選項
+        //click => #typeBox時會出現#typeList，當點按其他區域時，#typeList收起
+        //hover => type-item時，背景顏色改變
+        //onclick type-item時，#typeBox顯示改變為所選項目
+        let typeBox = document.getElementById('typeBox');
+        let typeList = document.getElementById('typeList');
+        let listItems = document.querySelectorAll('.type-item');
+        let itemArray = Array.from(listItems);
+
+        //預設為第一項為預選
+        typeBox.innerText = itemArray[0].innerText;
+
+        typeBox.addEventListener('click', function(){
+            //點擊時新增show-list以顯示選項
+            typeList.classList.toggle('show-list');
+
+            //listItems個別新增滑鼠移入/出監聽事件
+            listItems.forEach(function(item){
+                item.addEventListener('mouseenter', function(){
+                    item.style.backgroundColor = '#393129';
+                    item.style.color = '#FAF7F2';
+                    item.addEventListener('click', function(e){
+                        typeList.classList.remove('show-list');
+                        typeBox.innerText = e.target.innerText;
+                    })
+                });
+                item.addEventListener('mouseleave', function(){
+                    item.style.backgroundColor = '#FAF7F2';
+                    item.style.color = '#393129';
+                })
+            })
+            //點擊其他地方時也會關閉typeList
+            document.addEventListener('click', function(event){
+                if (event.target !== typeBox && event.target !== typeList) {
+                    typeList.classList.remove('show-list');
+                }
+            });
+        })
+        
+        // console.log(itemArray);
+        //alert('有點到')
     </script>
 </body>
 </html>

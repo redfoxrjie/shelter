@@ -142,24 +142,28 @@ a { text-decoration: none; color: #393129;}
     transition: background-color .3s;
 }
 .btn--filled-cta {
-    background-color: #FFC52F; 
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    background-color: #FFC52F;
+    transition: background-color .3s;
+}
+.btn--filled-cta:hover {
+    background-color: #f5b616;
+    transition: background-color .3s;
 }
 .btn--filled-cta::before {
-    width: 97.6px;
-    height: 31.6px;
     content: '';
-    position: absolute;
-    top: 1.2px;
-    right: 1.2px;
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
     background-color: #FFC52F;
+}
+.btn--filled-cta:hover::before {
+    background-color: #f5b616;
+    transition: background-color .3s;
 }
 .btn--filled-cta a::after {
     content: '⇀';
     font-size: 16px;
-    margin-left: 2px;
     display: inline;
+    position: absolute;
+    bottom: 14%;
+    right: 18%;
 }
 .btn--stroke-secondary {
     background-color: #A58D72; 
