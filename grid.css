@@ -83,6 +83,15 @@
 .row-cols-5 > .col {width: 20%;}
 .row-cols-6 > .col {width: 16.666666%;}
 
+@media screen and (min-width: 576px) {
+    .row-cols-sm-1 > .col{width: 100%;}
+    .row-cols-sm-2 > .col{width: 50%;}
+    .row-cols-sm-3 > .col{width: 33.333333%;}
+    .row-cols-sm-4 > .col{width: 25%;}
+    .row-cols-sm-5 > .col{width: 20%;}
+    .row-cols-sm-6 > .col{width: 16.666666%;}
+    }
+
 @media screen and (min-width: 768px) {
 .row-cols-md-1 > .col{width: 100%;}
 .row-cols-md-2 > .col{width: 50%;}

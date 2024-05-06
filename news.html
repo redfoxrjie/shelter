@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +16,25 @@
     <!-- google font：Zen Kaku Gothic New -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- google font：Karantina -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- google font：Aldrich -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- custom-style-sheet -->
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="news.css">
 </head>
+
 <body>
     <header>
         <div class="logo-btn">
@@ -38,24 +45,31 @@
             </a>
         </div>
         <div class="btn-wrapper">
-            <div class="login-btn">
-                <a href="#">
-                    <span class="login-btn-container">會員登入</span>
-                </a>
-            </div>
+            <!-- login-button -->
+            <btn class="login-btn" id="loginBtn">
+                <span class="login-btn-container" id="loginStatus">會員登入</span>
+            </btn>
+            <nav id="memberArea">
+                <ul>
+                    <a href="#"><li class="site-menu_item">會員資料</li></a>
+                    <li class="site-menu_item" id="logOut">登出</li>
+                </ul>
+            </nav>
+            <!-- nav-burger -->
             <button id="menu-toggle">
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
             </button>
+            <!-- nav-list -->
             <nav id="site-menu">
                 <ul class="site-menu_list">
                     <li class="site-menu_item"><a href="index.html">首頁</a></li>
                     <li class="site-menu_item"><a href="about.html">關於我們</a></li>
                     <li class="site-menu_item"><a href="news.html">最新消息</a></li>
                     <li class="site-menu_item"><a href="space.html">空間介紹</a></li>
-                    <li class="site-menu_item"><a href="#">館內餐飲</a></li>
-                    <li class="site-menu_item"><a href="#">聯絡我們</a></li>
+                    <li class="site-menu_item"><a href="dishes.html">館内餐飲</a></li>
+                    <li class="site-menu_item"><a href="contact.html">聯絡我們</a></li>
                 </ul>
                 <div class="social-icon-wrapper">
                     <a href="" class="social-icon--sm instagram"></a>
@@ -64,6 +78,40 @@
                 </div>
             </nav>
             <div id="overlay--black"></div>
+        </div>
+        <!-- login-lightbox -->
+        <div id="login-lightbox" class="lightbox login">
+            <div class="lightbox-container">
+                <div id="lightboxCancel">
+                    <img src="images/icon_svg/xmark-solid--white.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="lightbox-title col-12 col-md-5">
+                        <div class="triangle--yw"></div>
+                        <h1>Login</h1>
+                        <h2>會員登入</h2>
+                    </div>
+                    <div class="input-section col-12 col-md-7">
+                        <form class="input-box" id="login-form">
+                            <div class="input-bar">
+                                Email：<input type="email" name="email" id="email">
+                            </div>
+                            <div class="input-bar">
+                                密 碼：<input type="password" name="password" id="password" maxlength="16" minlength="8">
+                            </div>
+                            <div class="login-btns">
+                                <button class="btn btn--stroke-primary">
+                                    <span>註冊會員</span>
+                                </button>
+                                <button type="submit" class="btn btn--filled-primary" id="btnLogin">
+                                    確認送出
+                                </button>
+                            </div>
+                            <button id="forgot-pswd">忘記密碼?</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <section class="slider-section">
@@ -81,9 +129,6 @@
                 </div>
                 <div class="slider">
                     <img id="slide-1" src="images/news_people-talking-in-workshop_s.jpg" alt="">
-                    <img id="slide-2" src="images/news_closed-sign_s.jpg" alt="">
-                    <img id="slide-3" src="images/news_phone-on-a-rock-with-sakura-petals_s.jpg" alt="">
-                    <img id="slide-4" src="images/news_typing-on-laptop_s.jpg" alt="woman happily working with her laptop">
                 </div>
                 <div class="overlay--black"></div>
                 <div class="slider-btn">
@@ -97,91 +142,115 @@
         <div class="section-container">
             <h2>最新消息</h2>
             <div class="row">
-                <div class="col-10 news-col">
-                    <div class="row row-cols-2 card-row">
-                        <a href="news/news-article.html">
-                            <div class="col news-card">
-                                <div class="card-img"><img src="images/news_people-talking-in-workshop_s.jpg" alt=""></div>
+                <div class="filter col-3 col-md-3 col-lg-2">
+                    <h3>消息分類</h3>
+                    <div id="showAllCards">全部</div>
+                    <ul>
+                        <li class="activity">活動</li>
+                        <li class="announce">公告</li>
+                        <li class="discount">優惠</li>
+                    </ul>
+                </div>
+                <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3  col-9 col-md-9 col-lg-10">
+                    <div class="col">
+                        <a href="news/news-article.html" class="card-link">
+                            <div class="news-card">
+                                <div class="card-img">
+                                    <img src="images/news_people-talking-in-workshop_s.jpg">
+                                </div>
                                 <div class="card-txt">
                                     <div class="card-time font--time">2024.11.25</div>
                                     <div class="font--card-title">「樂在交流：共創美好實踐工作坊」開放報名，為事業找到志同道合的夥伴</div>
                                 </div>
-                                <div class="card-badge">公告</div>
+                                <div class="card-badge activity">活動</div>
                             </div>
                         </a>
-                        <a href="news/news-article.html">
-                            <div class="col news-card">
-                                <div class="card-img"><img src="images/news_closed-sign_s.jpg" alt=""></div>
+                    </div>
+                    <div class="col">
+                        <a href="news/news-article.html" class="card-link">
+                            <div class="news-card">
+                                <div class="card-img">
+                                    <img src="images/news_closed-sign_s.jpg">
+                                </div>
                                 <div class="card-txt">
                                     <div class="card-time font--time">2024.06.23</div>
                                     <div class="font--card-title">配合大樓消毒作業，7/1暫停營業一日，造成不便敬請見諒</div>
                                 </div>
-                                <div class="card-badge">公告</div>
+                                <div class="card-badge announce">公告</div>
                             </div>
                         </a>
-                        <a href="news/news-article.html">
-                            <div class="col news-card">
-                                <div class="card-img"><img src="images/news_phone-on-a-rock-with-sakura-petals_s.jpg" alt=""></div>
+                    </div>
+                    <div class="col">
+                        <a href="news/news-article.html" class="card-link">
+                            <div class="news-card">
+                                <div class="card-img">
+                                    <img src="images/news_phone-on-a-rock-with-sakura-petals_s.jpg">
+                                </div>
                                 <div class="card-txt">
                                     <div class="card-time font--time">2024.03.01</div>
                                     <div class="font--card-title">讓充滿新春氣息的音樂清單給你煥然一新的作業氛圍</div>
                                 </div>
-                                <div class="card-badge">公告</div>
+                                <div class="card-badge announce">公告</div>
                             </div>
                         </a>
-                        <a href="news/news-article.html">
-                            <div class="col news-card">
-                                <div class="card-img"><img src="images/news_typing-on-laptop_s.jpg" alt=""></div>
+                    </div>
+                    <div class="col">
+                        <a href="news/news-article.html" class="card-link">
+                            <div class="news-card">
+                                <div class="card-img">
+                                    <img src="images/news_typing-on-laptop_s.jpg">
+                                </div>
                                 <div class="card-txt">
                                     <div class="card-time font--time">2023.12.01</div>
                                     <div class="font--card-title">搶先預約明年的工作空間 | 即日起至12/31止，年租專案8折優惠</div>
                                 </div>
-                                <div class="card-badge">公告</div>
+                                <div class="card-badge discount">優惠</div>
                             </div>
                         </a>
-                        <a href="news/news-article.html">
-                            <div class="col news-card">
-                                <div class="card-img"><img src="images/news_soft-light-night-room_s.jpg" alt=""></div>
+                    </div>
+                    <div class="col">
+                        <a href="news/news-article.html" class="card-link">
+                            <div class="news-card">
+                                <div class="card-img">
+                                    <img src="images/news_soft-light-night-room_s.jpg">
+                                </div>
                                 <div class="card-txt">
                                     <div class="card-time font--time">2023.11.11</div>
                                     <div class="font--card-title">單人辦公室增設夜間調節暖黃光源 | 陪伴深夜工作不孤單</div>
                                 </div>
-                                <div class="card-badge">公告</div>
+                                <div class="card-badge announce">公告</div>
                             </div>
                         </a>
-                        <a href="news/news-article.html">
-                            <div class="col news-card">
-                                <div class="card-img"><img src="images/library_design-books_s.jpg" alt=""></div>
+                    </div>
+                    <div class="col">
+                        <a href="news/news-article.html" class="card-link">
+                            <div class="news-card">
+                                <div class="card-img">
+                                    <img src="images/library_design-books_s.jpg">
+                                </div>
                                 <div class="card-txt">
                                     <div class="card-time font--time">2023.10.19</div>
                                     <div class="font--card-title">新書報到 | 圖書資源區用圖書已更新，新增50本設計相關書籍資源</div>
                                 </div>
-                                <div class="card-badge">公告</div>
+                                <div class="card-badge announce">公告</div>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-2 filter-col">
-                    <h3>消息分類</h3>
-                    <ul>
-                        <li><a href="#">活動</a></li>
-                        <li><a href="#">公告</a></li>
-                        <li><a href="#">優惠</a></li>
-                    </ul>
-                </div>
             </div>
+
             <div class="page-btn">
                 <ul>
-                    <li><a href="#">1</a></li> 
-                    <li><a href="#">2</a></li> 
-                    <li><a href="#">3</a></li> 
-                    <li><a href="#">4</a></li> 
-                    <li><a href="#">5</a></li> 
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-container row row-cols-1 row-cols-md-2">
             <div class="social-media-bar col">
@@ -202,15 +271,190 @@
         </div>
     </footer>
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function(){
+        /*----- Show Nav List -----*/
+        document.getElementById('menu-toggle').addEventListener('click', function () {
             document.getElementById('site-menu').classList.toggle('active');
             document.getElementById('overlay--black').classList.toggle('active');
             document.getElementById('menu-toggle').classList.toggle('active');
         });
-        document.getElementById('overlay--black').addEventListener('click', function() {
+        document.getElementById('overlay--black').addEventListener('click', function () {
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
         });
+        //-----Login Page:function-----
+        let loginStatus = document.getElementById("loginStatus").textContent;
+        let lightBox = document.getElementById("login-lightbox");
+        let loginForm = document.getElementById('login-form');
+
+        function closeLightBox() {
+            clearData;
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        }
+        function checkData() {
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (loginForm.checkValidity()) {
+                    clearData();
+                    statusSwitch();
+                    closeLightBox();
+                }
+            });
+        }
+        function clearData() {
+            //將登入表單上的資料清空
+            document.getElementById("email").value = '';
+            document.getElementById("password").value = '';
+        }
+        function statusSwitch() {
+            if (loginStatus === '會員登入') {
+                document.getElementById("loginStatus").textContent = '會員專區';
+            }
+            else {
+                clearData();
+                document.getElementById("loginStatus").textContent = '會員登入';
+            }
+        }
+        //-----Login Page:login-----
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員登入') {
+                document.getElementById('site-menu').classList.remove('active');
+                document.getElementById('login-lightbox').classList.toggle('active');
+                document.getElementById('overlay--black').classList.toggle('active');
+            }
+        });
+        document.getElementById("lightboxCancel").addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('btnLogin').onclick = checkData;
+
+        //-----memberArea:會員專區-----
+        let memberArea = document.getElementById('memberArea');
+        let loginBtn = document.getElementById('loginBtn');
+
+        loginBtn.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        });
+        loginBtn.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        });
+        memberArea.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        })
+        memberArea.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        })
+        //-----Logout:登出-----
+        let logOut = document.getElementById('logOut');
+        logOut.addEventListener('click', function(){
+            clearData();
+            document.getElementById('loginStatus').textContent = '會員登入';
+            memberArea.style.display = "none";
+        })
+        /*----- News Card Filter -----*/
+        function showCard(e) {
+            let types = document.querySelectorAll(".filter ul li");
+            let showAllCards = document.getElementById('showAllCards');
+
+            // 移除「全部」按鈕的focus
+            showAllCards.classList.remove('focus');
+            // 移除所有 li 的 focus 类型
+            types.forEach(function (li) {
+                li.classList.remove('focus');
+            });
+
+            // 將被點擊的li增加focus類型
+            e.target.classList.add('focus');
+
+            // 取得被點擊的類型及所有news-card
+            let type = e.target.classList[0];
+            let newsCards = document.querySelectorAll('.news-card');
+
+            newsCards.forEach(function (card) {
+                // 取得.news-card的子層物件.card-badge及父層的.col
+                let cardContent = card.querySelector('.card-badge');
+                let parentCol = card.closest('.col');
+
+                // 檢查.card-badge中是否有與被點擊的li相同類型(class)
+                // 符合者移除其hidden，同時如果父層有.col，也一併移除其hidden
+                // 與點擊的li類型不同時，則為該news-card及其父層.col添加hidden
+                if (cardContent.classList.contains(type)) {
+                    card.classList.remove('hidden');
+                    if (parentCol) {
+                        parentCol.classList.remove('hidden');
+                    }
+                } else {
+                    card.classList.add('hidden');
+                    if (parentCol) {
+                        parentCol.classList.add('hidden');
+                    }
+                }
+            });
+            let allCards = document.querySelectorAll('.news-card');
+
+            allCards.forEach(function (card) {
+                let cardContent = card.querySelector('.card-badge');
+                let parentCol = card.closest('.col');
+                if (cardContent.classList.contains(type)) {
+                    card.classList.remove('hidden');
+                    if (parentCol) {
+                        parentCol.classList.remove('hidden');
+                    }
+                } else {
+                    card.classList.add('hidden');
+                    if (parentCol) {
+                        parentCol.classList.add('hidden');
+                    }
+                }
+            });
+        }
+        // 設定init方法，利用for迴圈監聽onclick事件，根據被點擊的li執行showCard
+        function init() {
+            let types = document.querySelectorAll(".filter ul li");
+            for (let i = 0; i < types.length; i++) {
+                types[i].onclick = showCard;
+            }
+        }
+        window.addEventListener("load", init, false);
+
+        // 顯示全部卡片
+        let showAllCards = document.getElementById('showAllCards');
+
+        showAllCards.addEventListener('click', function () {
+            showAllCards.classList.add('focus');
+            let types = document.querySelectorAll(".filter ul li");
+            let allCards = document.querySelectorAll('.news-card');
+            types.forEach(function (li) {
+                li.classList.remove('focus');
+            });
+            allCards.forEach(function (card) {
+                card.classList.remove('hidden');
+                // 找到卡片父層的容器並移除hidden
+                let parentCol = card.closest('.col');
+                if (parentCol) {
+                    parentCol.classList.remove('hidden');
+                }
+            });
+        });
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +16,25 @@
     <!-- google font：Zen Kaku Gothic New -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- google font：Karantina -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- google font：Aldrich -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@100..900&family=Karantina:wght@300;400;700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
     <!-- custom-style-sheet -->
     <link rel="stylesheet" type="text/css" href="../common.css">
     <link rel="stylesheet" type="text/css" href="room.css">
 </head>
+
 <body>
     <header>
         <div class="logo-btn">
@@ -38,24 +45,31 @@
             </a>
         </div>
         <div class="btn-wrapper">
-            <div class="login-btn">
-                <a href="#">
-                    <span class="login-btn-container">會員登入</span>
-                </a>
-            </div>
+            <!-- login-button -->
+            <btn class="login-btn" id="loginBtn">
+                <span class="login-btn-container" id="loginStatus">會員登入</span>
+            </btn>
+            <nav id="memberArea">
+                <ul>
+                    <a href="#"><li class="site-menu_item">會員資料</li></a>
+                    <li class="site-menu_item" id="logOut">登出</li>
+                </ul>
+            </nav>
+            <!-- nav-burger -->
             <button id="menu-toggle">
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
                 <div class="menu-toggle__deco-bar"></div>
             </button>
+            <!-- nav-list -->
             <nav id="site-menu">
                 <ul class="site-menu_list">
                     <li class="site-menu_item"><a href="../index.html">首頁</a></li>
                     <li class="site-menu_item"><a href="../about.html">關於我們</a></li>
                     <li class="site-menu_item"><a href="../news.html">最新消息</a></li>
                     <li class="site-menu_item"><a href="../space.html">空間介紹</a></li>
-                    <li class="site-menu_item"><a href="#">館內餐飲</a></li>
-                    <li class="site-menu_item"><a href="#">聯絡我們</a></li>
+                    <li class="site-menu_item"><a href="../dishes.html">館内餐飲</a></li>
+                    <li class="site-menu_item"><a href="../contact.html">聯絡我們</a></li>
                 </ul>
                 <div class="social-icon-wrapper">
                     <a href="" class="social-icon--sm instagram"></a>
@@ -65,18 +79,52 @@
             </nav>
             <div id="overlay--black"></div>
         </div>
+        <!-- login-lightbox -->
+        <div id="login-lightbox" class="lightbox login">
+            <div class="lightbox-container">
+                <div id="lightboxCancel">
+                    <img src="../images/icon_svg/xmark-solid--white.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="lightbox-title col-12 col-md-5">
+                        <div class="triangle--yw"></div>
+                        <h1>Login</h1>
+                        <h2>會員登入</h2>
+                    </div>
+                    <div class="input-section col-12 col-md-7">
+                        <form class="input-box" id="login-form">
+                            <div class="input-bar">
+                                Email：<input type="email" name="email" id="email">
+                            </div>
+                            <div class="input-bar">
+                                密 碼：<input type="password" name="password" id="password" maxlength="16" minlength="8">
+                            </div>
+                            <div class="login-btns">
+                                <button class="btn btn--stroke-primary">
+                                    <span>註冊會員</span>
+                                </button>
+                                <button type="submit" class="btn btn--filled-primary" id="btnLogin">
+                                    確認送出
+                                </button>
+                            </div>
+                            <button id="forgot-pswd">忘記密碼?</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="show-room-section">
         <div class="show-room-container row">
             <div class="room-gallery col-12 col-md-8">
                 <div class="room-img-main">
-                    <img src="../images/space_single-room_s.jpg" alt="">    
+                    <img src="../images/space_single-room_s.jpg" alt="" id="large">
                 </div>
-                <div class="room-img-thumbnail">
-                    <img src="../images/space_single-room_s.jpg">
-                    <img src="../images/space_socket-in-desk_s.jpg">
-                    <img src="../images/spcae_devices_charger-n-cabel_s.jpg">
-                    <img src="../images/space_grey-chair_s.jpg">
+                <div class="room-img-thumbnail" id="smallPanel">
+                    <img src="../images/space_single-room_s.jpg" class="small focus">
+                    <img src="../images/space_socket-in-desk_s.jpg" class="small">
+                    <img src="../images/spcae_devices_charger-n-cabel_s.jpg" class="small">
+                    <img src="../images/space_grey-chair_s.jpg" class="small">
                 </div>
             </div>
             <div class="info-block col-12 col-md-4">
@@ -97,7 +145,6 @@
                     </ul>
                 </div>
                 <div class="price-select">
-                    
                     <div id="rentType">
                         <div id="typeBox"></div>
                         <div id="typeList" class="hidden">
@@ -125,7 +172,6 @@
             </div>
             <div class="floor-map col-12 col-md-8">
                 <img src="../images/space_floor-map.svg" alt="shelter空間平面圖">
-                <!-- <div id="office-block-mark"></div> -->
                 <div id="single-room-mark"></div>
             </div>
         </div>
@@ -197,7 +243,8 @@
                 </div>
                 <div class="col facility-card">
                     <div class="facility-title">
-                        <span class="title-icon"><img src="../images/icon_svg/square-parking-solid.svg" alt=""></span>接待設施
+                        <span class="title-icon"><img src="../images/icon_svg/square-parking-solid.svg"
+                                alt=""></span>接待設施
                     </div>
                     <ul>
                         <li>無停車設施</li>
@@ -239,11 +286,11 @@
             <h2>租借方案</h2>
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col">
-                    <div class="plan-card">
+                    <div class="plan-card selected">
                         <div class="card-head">
                             <div class="color-bar"></div>
                             <div class="color-round">
-                                <img src="../images/icon_svg/calendar-day-solid--secondary.svg" alt="">
+                                <img src="../images/icon_svg/calendar-day-solid.svg" alt="">
                             </div>
                         </div>
                         <div class="plan-content">
@@ -254,10 +301,10 @@
                                     <li>單日計費制</li>
                                     <li>最晚可於前一日取消</li>
                                     <li>超時費用另計</li>
-                                </ul> 
+                                </ul>
                             </div>
                             <div class="btn btn--stroke-secondary">
-                                <a href="#" class="font--btn">立即預約</a>
+                                <a href="../reservation/01_dates.html" class="font--btn">立即預約</a>
                             </div>
                         </div>
                     </div>
@@ -279,10 +326,10 @@
                                     <li>連續五天租借</li>
                                     <li>最晚可於三日前取消</li>
                                     <li>超時費用另計</li>
-                                </ul> 
+                                </ul>
                             </div>
                             <div class="btn btn--stroke-secondary">
-                                <a href="#" class="font--btn">立即預約</a>
+                                <a href="../reservation/01_dates.html" class="font--btn">立即預約</a>
                             </div>
                         </div>
                     </div>
@@ -304,20 +351,15 @@
                                     <li>連續30天租借</li>
                                     <li>最晚可於一週前取消</li>
                                     <li>超時費用另計</li>
-                                </ul> 
+                                </ul>
                             </div>
                             <div class="btn btn--stroke-secondary">
-                                <a href="#" class="font--btn">立即預約</a>
+                                <a href="../reservation/01_dates.html" class="font--btn">立即預約</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="back-to-space">
-        <div class="btn btn--stroke-primary">
-            <a href="../space.html" class="font--btn">空間介紹</a>
         </div>
     </div>
     <footer>
@@ -340,21 +382,105 @@
         </div>
     </footer>
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function(){
+        //nav-toggle-n-list
+        document.getElementById('menu-toggle').addEventListener('click', function () {
             document.getElementById('site-menu').classList.toggle('active');
             document.getElementById('overlay--black').classList.toggle('active');
             document.getElementById('menu-toggle').classList.toggle('active');
         });
-        document.getElementById('overlay--black').addEventListener('click', function() {
+        document.getElementById('overlay--black').addEventListener('click', function () {
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
         });
+        //-----Login Page:function-----
+        let loginStatus = document.getElementById("loginStatus").textContent;
+        let lightBox = document.getElementById("login-lightbox");
+        let loginForm = document.getElementById('login-form');
 
-        //預設「首項」為selected狀態
-        //typeBox顯示預選的選項
-        //click => #typeBox時會出現#typeList，當點按其他區域時，#typeList收起
-        //hover => type-item時，背景顏色改變
-        //onclick type-item時，#typeBox顯示改變為所選項目
+        function closeLightBox() {
+            clearData;
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        }
+        function checkData() {
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (loginForm.checkValidity()) {
+                    clearData();
+                    statusSwitch();
+                    closeLightBox();
+                }
+            });
+        }
+        function clearData() {
+            //將登入表單上的資料清空
+            document.getElementById("email").value = '';
+            document.getElementById("password").value = '';
+        }
+        function statusSwitch() {
+            if (loginStatus === '會員登入') {
+                document.getElementById("loginStatus").textContent = '會員專區';
+            }
+            else {
+                clearData();
+                document.getElementById("loginStatus").textContent = '會員登入';
+            }
+        }
+        //-----Login Page:login-----
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員登入') {
+                document.getElementById('site-menu').classList.remove('active');
+                document.getElementById('login-lightbox').classList.toggle('active');
+                document.getElementById('overlay--black').classList.toggle('active');
+            }
+        });
+        document.getElementById("lightboxCancel").addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('overlay--black').addEventListener('click', function () {
+            document.getElementById('login-lightbox').classList.remove('active');
+            document.getElementById('overlay--black').classList.remove('active');
+        });
+        document.getElementById('btnLogin').onclick = checkData;
+
+        //-----memberArea:會員專區-----
+        let memberArea = document.getElementById('memberArea');
+        let loginBtn = document.getElementById('loginBtn');
+
+        loginBtn.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        });
+        loginBtn.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        });
+        memberArea.addEventListener('mouseenter', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "block";
+            }
+        })
+        memberArea.addEventListener('mouseleave', function () {
+            let loginStatus = document.getElementById("loginStatus").textContent;
+            if (loginStatus === '會員專區') {
+                memberArea.style.display = "none";
+            }
+        })
+        //-----Logout:登出-----
+        let logOut = document.getElementById('logOut');
+        logOut.addEventListener('click', function(){
+            clearData();
+            document.getElementById('loginStatus').textContent = '會員登入';
+            memberArea.style.display = "none";
+        })
+        //---------租借方案下拉選單----------
         let typeBox = document.getElementById('typeBox');
         let typeList = document.getElementById('typeList');
         let listItems = document.querySelectorAll('.type-item');
@@ -363,35 +489,82 @@
         //預設為第一項為預選
         typeBox.innerText = itemArray[0].innerText;
 
-        typeBox.addEventListener('click', function(){
+        typeBox.addEventListener('click', function () {
             //點擊時新增show-list以顯示選項
             typeList.classList.toggle('show-list');
 
             //listItems個別新增滑鼠移入/出監聽事件
-            listItems.forEach(function(item){
-                item.addEventListener('mouseenter', function(){
+            listItems.forEach(function (item) {
+                item.addEventListener('mouseenter', function () {
                     item.style.backgroundColor = '#393129';
-                    item.style.color = '#FAF7F2';
-                    item.addEventListener('click', function(e){
+                    item.style.color = '#FFF';
+                    item.addEventListener('click', function (e) {
                         typeList.classList.remove('show-list');
                         typeBox.innerText = e.target.innerText;
                     })
                 });
-                item.addEventListener('mouseleave', function(){
-                    item.style.backgroundColor = '#FAF7F2';
+                item.addEventListener('mouseleave', function () {
+                    item.style.backgroundColor = '#FFF';
                     item.style.color = '#393129';
                 })
             })
             //點擊其他地方時也會關閉typeList
-            document.addEventListener('click', function(event){
+            document.addEventListener('click', function (event) {
                 if (event.target !== typeBox && event.target !== typeList) {
                     typeList.classList.remove('show-list');
                 }
             });
         })
-        
-        // console.log(itemArray);
-        //alert('有點到')
+
+        //---------方案卡片選取變色----------
+        let planCards = document.querySelectorAll('.plan-card');
+
+        planCards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                //當點擊事件發生時，先移除所有卡片的selected類型
+                planCards.forEach(function (card) {
+                    card.classList.remove('selected');
+                    let imgElement = card.querySelector('.color-round img');
+                    let src = imgElement.getAttribute('src');
+                    if (!src.includes('--secondary')) {
+                        src = src.replace('.svg', '--secondary.svg');
+                        imgElement.setAttribute('src', src);
+                    }
+                });
+
+                //再為被點擊的特定卡片添加selected屬性
+                this.classList.add('selected');
+
+                //獲取被點擊卡片的img
+                let imgElement = this.querySelector('.color-round img');
+                let src = imgElement.getAttribute('src');
+                src = src.replace('--secondary.svg', '.svg');
+                imgElement.setAttribute('src', src);
+            })
+        })
+
+        //---------點小圖秀出大圖----------
+        function showLarge(e) {
+            let smalls = document.querySelectorAll("#smallPanel img");
+
+            //先移除全部img的focus類型
+            smalls.forEach(function(img){
+                img.classList.remove('focus');
+            });
+            //將被點擊的img增加focus類型
+            e.target.classList.add('focus');
+            let small = e.target;
+            document.getElementById("large").src = small.src;
+        }
+        function init() {
+            let smalls = document.querySelectorAll("#smallPanel img");
+            for (let i = 0; i < smalls.length; i++) {
+                smalls[i].onclick = showLarge;
+            }
+        }
+        window.addEventListener("load", init, false);
+                
     </script>
 </body>
+
 </html>
