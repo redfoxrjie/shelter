@@ -281,7 +281,7 @@ section.slides-section {
     order: 1;
     margin-bottom: 30px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .main-content {
         order: 1;
     }
@@ -312,19 +312,17 @@ section.slides-section {
 @media screen and (min-width: 360px) {
     .main-txt {
         width: 100%;
-        margin: 0 52px;
+        margin: 0 7.96vw;
     }
 }
 @media screen and (min-width: 768px) {
     .main-txt {
-        width: 100%;
-        margin: 0 102px;
+        width: 50%;
     }
 }
 @media screen and (min-width: 1024px) {
     .main-txt {
         width: 46%;
-        margin: 0 102px;
     }
 }
 .main-content {

@@ -51,6 +51,7 @@ a { text-decoration: none; color: #393129;}
 }
 ::selection {
     background-color: #ffde8c;
+    color: #393129;
 }
 /* button樣式 */
 .btn {
@@ -225,7 +226,7 @@ header {
     position: relative;
 }
 .login-btn span::after {
-    content: '會員登入';
+    content: 'MEMBER';
     position: absolute;
     left: 0px;
     top: 100%;
@@ -523,7 +524,7 @@ footer {
 .legal-notice a {
     color: #000;
     font-size: 0.7rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 6px;
     display: inline-block;
 }
@@ -595,7 +596,7 @@ footer {
     display: none;
     justify-content: center;
     position: fixed;
-    top: 50vh;
+    top: 45vh;
     left: 50vw;
     transform: translate(-50%, -50%);
 }
@@ -608,6 +609,7 @@ footer {
     top: 1%;
     right: 2%;
     cursor: pointer;
+    z-index: 1;
 }
 #lightboxCancel:hover {
     background-color: #947a5c;
@@ -633,14 +635,9 @@ footer {
     overflow: hidden;
     background-color: #FAF7F2;
 }
-.lightbox-title {
-    background-color: #FFC52F;
+.login-btns {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 0px;
-    position: relative;
+    gap: 6px;
 }
 .lightbox-title h1 {
     font-size: 3.25rem;
@@ -650,13 +647,33 @@ footer {
     font-weight: 400;
     margin-bottom: 10px;
 }
-.login-btns {
+.lightbox-title {
+    background-color: #FFC52F;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px;
+    position: relative;
 }
 .input-section {
     background-color: #FAF7F2;
-    padding: 118px 0px 26px;
+    padding: 78px 0px 17px;
+}
+@media screen and (min-width: 576px) {
+    .lightbox-title {
+        background-color: #FFC52F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 0px;
+        position: relative;
+    }
+    .input-section {
+        background-color: #FAF7F2;
+        padding: 118px 0px 26px;
+    }
 }
 .input-box {
     width: 61%;
@@ -664,6 +681,10 @@ footer {
 }
 .lightbox-title h2 {
     color: #393129;
+}
+.input-bar {
+    width: 100%;
+    display: flex;
 }
 .input-box .input-bar {
     font-size: 0.875rem;
@@ -677,12 +698,18 @@ footer {
     margin-bottom: 37px;
 }
 .input-box .input-bar input {
+    width: 100%;
     border: none;
     background-color: unset;
     font-size: 1rem;
+    display: block;
+    flex-grow: 1;
 }
 .input-box .input-bar input:focus {
     outline: none;
+}
+.input-front {
+    min-width: 64px;
 }
 .input-box .login-btns .btn{
     font-family: "Aldrich", Verdana, sans-serif;
@@ -691,7 +718,8 @@ footer {
     text-align: center;
     text-decoration: none;
     position: relative;
-    padding: 12px 30px 10px;
+    padding: 12px 0px;
+    flex-grow: 1;
     border: none;
     cursor: pointer; 
 }

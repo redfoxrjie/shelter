@@ -59,6 +59,7 @@ body {background-color: #FAF7F2;}
 }
 .booking-form .input-bar {
     width: 70%;
+    max-width: 323px;
     color: #393129;
     font-size: 0.875rem;
     font-weight: 700;
@@ -81,6 +82,9 @@ body {background-color: #FAF7F2;}
 
 /*日期選擇*/
 .rent-days {width: 70%;}
+@media screen and (min-width: 768px) {
+    .rent-days {width: 100%;}
+}
 input[type="date"] {
     font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
     font-size: 0.875rem;
@@ -95,6 +99,8 @@ input[type="date"] {
 }
 .day-selector {
     width: 80%;
+    min-width: 114px;
+    max-width: 250px;
     margin: 8px 0px;
 }
 .day-selector h4 {
@@ -102,11 +108,25 @@ input[type="date"] {
     width: fit-content;
 }
 /*房型照片*/
+.booking-form .col:last-child {order: 1;}
+.booking-form .col:first-child {order: 2;}
+@media screen and (min-width: 768px) {
+    .booking-form .col:last-child {order: 2;}
+    .booking-form .col:first-child {order: 1;}
+}
 .room-img {
     width: 76%;
     aspect-ratio: 4/3;
     overflow: hidden;
-    margin: 40px 0px 40px auto;
+    margin: 40px 0px 40px;
+}
+@media screen and (min-width: 768px) {
+    .room-img {
+        width: 76%;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        margin: 40px 0px 40px auto;
+    }
 }
 .room-img img {
     width: 100%;
@@ -136,29 +156,62 @@ input[type="date"] {
 .item-unit {
     font-family: "Aldrich", Verdana, sans-serif;
 }
-.item-unit span {
+.item-unit .per-time {
     color: #A58D72;
     margin-left: 4px;
+}
+.item-unit .per-time::before {
+    content: '/';
+}
+.per-time::after, .times::after {
+    content: '日'
 }
 .item-name, .item-unit {
     font-size: 0.88rem;
     color: #393129;
+}
+.item-unit:before {
+    content: '$ '
+}
+.item-unit.plus::before {
+    content: '+$ ';
+}
+.item-unit.times::before {
+    content: '';
 }
 /*按鈕*/
 .step-btns, .payment-btns {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    gap: 1.56vw;
+    margin-top: 16px;
+}
+@media screen and (min-width: 576px) {
+    .step-btns, .payment-btns {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1.56vw;
+        margin-top: 16px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .step-btns, .payment-btns {
+        margin-top: 0px;
+    }
+    .step-btns {
+        justify-content: flex-end
+    }
+    .payment-btns {
+        justify-content: flex-start;
+    }
 }
 .step-btns .btn, .payment-btns .btn {
-    margin-left: 20px;
     margin-top: auto;
     height: fit-content;
-}
-.payment-btns .btn {
-    margin-right: 20px;
-    margin-left: 0px;
 }
 .btn--filled-primary a{color: #FAF7F2;}
 .btn--filled-primary a::after {
@@ -176,37 +229,112 @@ input[type="date"] {
 .device-card-wrapper {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: space-around;
     margin: 40px 0px;
+}
+@media screen and (min-width: 768px) {
+    .device-card-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        justify-content: space-around;
+        margin: 40px 0px;
+    }
 }
 .device-card {
     background-color: #FAF7F2;
-    width: 23%;
+    width: 100%;
     box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, .2) ;
     border-radius: 10px;
     overflow: hidden;
-    margin-right: 24px;
+    display: block;
 }
-.device-card:nth-child(2) .device-img img{
-    object-fit: cover;
-    width: 100%;
-    object-position: 0% 70%;
-
+@media screen and (min-width: 576px){
+    .device-card {
+        background-color: #FAF7F2;
+        width: 100%;
+        box-shadow: 0px 2px 10px 0 rgba (0, 0, 0, .2) ;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+    }
+}
+@media screen and (min-width: 768px){
+    .device-card {
+        background-color: #FAF7F2;
+        width: 100%;
+        box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, .2) ;
+        border-radius: 10px;
+        overflow: hidden;
+        display: block;
+    }
 }
 .device-img {
     width:  100%;
     height: auto;
-    aspect-ratio: 3/2;
+    aspect-ratio: 16/9;
     overflow: hidden;
+}
+@media screen and (min-width: 576px) {
+    .device-img {
+        width: 33.3333%;
+        min-width:  182.65px;
+        height: auto;
+        aspect-ratio: 5/4;
+        overflow: hidden;
+    }
+}
+@media screen and (min-width: 768px) {
+    .device-img {
+        width:  100%;
+        height: auto;
+        aspect-ratio: 3/2;
+        overflow: hidden;
+    }
 }
 .device-img img{
     width: 100%;
     height: 100%;
-    
+    object-fit: cover;
+}
+.device-card:nth-child(2) .device-img img{
+    object-position: 65% 70%;
+}
+.device-card:nth-child(3) .device-img img{
+    object-position: 70% 0%;
+}
+@media screen and (min-width: 768px) {
+    .device-card:nth-child(2) .device-img img{
+        object-position: 0% 70%;
+    }
+    .device-card:nth-child(3) .device-img img{
+        object-position: 100% 0%;
+    }
 }
 .device-txt {
     text-align: center;
     box-sizing: border-box;
-    padding: 12px 0px;
+    padding: 12px 12px;
+    margin-left: 12px;
+}
+@media screen and (min-width: 576px){
+    .device-txt {
+        text-align: left;
+        box-sizing: border-box;
+        padding: 12px 12px;
+        margin-left: 12px;
+    }
+}
+@media screen and (min-width: 768px){
+    .device-txt {
+        text-align: center;
+        box-sizing: border-box;
+        padding: 12px 12px;
+        margin-left: 0px;
+    }
 }
 .device-txt ul {
     margin: 12px auto;
@@ -214,7 +342,7 @@ input[type="date"] {
 }
 .device-txt ul li {
     list-style: disc;
-    list-style-position: inside;
+    transform: translateX(0.75rem);
     font-size: 0.75rem;
     line-height: 22px;
     text-align: left;
@@ -272,6 +400,9 @@ ul.rental-guidence li::before {content: "※";}
 }
 .rent-data ul li:not(:last-child) {
     margin-bottom: 18px;
+}
+.payment-block {
+    width: 100%;
 }
 .btn-icon {
     width: 0.75rem;

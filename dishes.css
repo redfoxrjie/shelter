@@ -1,8 +1,11 @@
 body {
     background-color: #FAF7F2;
 }
+.dishes-page.container {
+    width: 73.125vw;
+}
 @media screen and (min-width: 768px) {
-    .container {
+    .dishes-page.container {
         width: 73.125vw;
     }
 }
@@ -41,6 +44,7 @@ body {
     font-size: 0.9rem;
     margin-bottom: 9px;
     letter-spacing: 2px;
+    line-height: 140%;
 }
 .dish-text .dish-intro {
     font-size: 0.75rem;
@@ -58,19 +62,19 @@ body {
     font-size: 0.875rem;
     text-align: right;
 }
-.menu .row .col-12 {
-    box-sizing: border-box;
-    padding: 20px 62px 20px 56px;
-}
 .menu .row {
     margin: 0px;
     border-bottom: solid 2px #393129;
+    width: 100%;
+}
+.menu .row .col-12 {
+    box-sizing: border-box;
+    padding: 2.1% 6.6% 2.1% 5.9%;
 }
 span.icon img {
     object-fit: contain;
     width: 100%;
     height: 100%;
-    /* display: inline-block; */
 }
 span.icon {
     width: 1rem;

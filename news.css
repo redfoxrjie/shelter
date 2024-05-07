@@ -14,61 +14,158 @@
 }
 .slider-wrapper::after {
     content: '';
-    width: 108px;
-    height: 116px;
+    width: 23%;
+    height: 18.56%;
     background-color: #FAF7F2;
     position: absolute;
     right: -1px;
     bottom: 0px;
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
+@media screen and (min-width: 768px) {
+    .slider-wrapper::after {
+        content: '';
+        width: 11.5%;
+        height: 26.4%;
+        background-color: #FAF7F2;
+        position: absolute;
+        right: -1px;
+        bottom: 0px;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+}
 .slider-txt-wrapper {
+    width: 83%;
     position: absolute;
     display: flex;
-    bottom: 32px;
-    left: 54px;
+    flex-wrap: wrap;
+    bottom: 5.769%;
+    left: 5.769%;
     z-index: 1;
+    align-items: flex-end;
+}
+@media screen and (min-width: 768px) {
+    .slider-txt-wrapper {
+        width: 83%;
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        bottom: 3.418%;
+        left: 5.769%;
+        z-index: 1;
+        align-items: flex-end;
+    }
+}
+.slider-title {
+    margin-bottom: 4.865%;
+}
+@media screen and (min-width: 768px) {
+    .slider-title {
+        margin-bottom: 0px;
+    }
 }
 .slider-title h1, .title--upper-case{
     color: #FAF7F2;
 }
 .slider-title h1 {
-    margin-bottom: 12px;
+    margin-bottom: 4.865%;
+    font-size: 1.7rem;
+}
+@media screen and (min-width: 768px){
+    .slider-title h1 {
+        font-size: 1.9rem;
+    }
 }
 .title--upper-case {
     font-family: "Aldrich", Verdana, sans-serif;
-    font-size: 3rem;
-    line-height: 48px;
-    letter-spacing: -2px;
+    font-size: 2rem;
+    line-height: 30px;
+    letter-spacing: 0px;
     font-weight: 700;
 }
+@media screen and (min-width: 768px) {
+    .title--upper-case {
+        font-family: "Aldrich", Verdana, sans-serif;
+        font-size: 2.7rem;
+        line-height: 43px;
+        letter-spacing: 0px;
+        font-weight: 700;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .title--upper-case {
+        font-size: 3rem;
+        line-height: 48px;
+    }
+}
 .title--upper-case span {
-    font-size: 66px;
+    font-size: 2.52rem;
+}
+@media screen and (min-width: 768px) {
+    .title--upper-case span {
+        font-size: 3.6rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .title--upper-case span {
+        font-size: 4rem;
+    }
 }
 .slider-content {
-    width: 42%;
-    margin-left: 20px;
+    width: 84%;
+    margin-left: 0px;
     align-self: flex-end;
+}
+@media screen and (min-width: 768px) {
+    .slider-content {
+        width: 42%;
+        margin-left: 20px;
+        align-self: flex-end;
+    }
 }
 .slider-content .font--time{
     color: #FAF7F2;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    line-height: 287%;
+    font-size: .9rem;
+    letter-spacing: 1.8px;
+}
+@media screen and (min-width: 1024px){
+    .slider-content .font--time{
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
 }
 .slider-content h3 {
     color: #FAF7F2;
-    line-height: 142%;
-    letter-spacing: 2.8px;
+    line-height: 128%;
+    letter-spacing: 2.52px;
     font-weight: 500;
+    font-size: 1.05rem;
+}
+@media screen and (min-width: 1024px){
+    .slider-content h3 {
+        line-height: 142%;
+        letter-spacing: 2.8px;
+        font-size: 1.16rem;
+    }
 }
 .slider {
+    width: 100%;
     display: flex;
-    aspect-ratio: 2.133/1;
+    aspect-ratio: 1/1.333333;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;/*設定slider在scroll時吸附至吸附點的嚴格程度*/
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+    .slider {
+        display: flex;
+        aspect-ratio: 2.133/1;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
 }
 .overlay--black {
     background-color: #000;
@@ -77,24 +174,66 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    aspect-ratio: 2.133/1;
+    aspect-ratio: 1/1.333333;
 }
-.slider-btn {
-    width: 60px;
+@media screen and (min-width: 768px) {
+    .overlay--black {
+        background-color: #000;
+        opacity: .2;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        aspect-ratio: 2.133/1;
+    }
+}
+.slider-btns {
+    width: 16%;
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    right: 0.5%;
+    bottom: 0%;
     display: flex;
     flex-direction: column;
     z-index: 3;
 }
-.silder-btn img {
-    display: block;
+@media screen and (min-width: 768px) {
+    .slider-btns {
+        width: 8%;
+        position: absolute;
+        right: 0.5%;
+        bottom: 0%;
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+    }
+}
+#prevSlide, #nextSlide {
+    width: 75%;
+    height: auto;
+}
+#nextSlide {
+    width: 100%;
+}
+#prevSlide {
+    margin-bottom: -30%;
+}
+#prevSlide img, #nextSlide img {
+    object-fit: contain;
+    width: 100%;
 }
 .slider img {
     flex: 1 0 100%;
     scroll-snap-align: start;
     object-fit: cover;
+    object-position: -100px 0px;
+}
+@media screen and (min-width: 768px) {
+    .slider img {
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: cover;
+        object-position: 0px 0px;
+    }
 }
 #arrow-wh {align-self: flex-start;}
 #arrow-yw {align-self: flex-end;}
@@ -208,6 +347,9 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+}
+.filter ul li:hover, #showAllCards:hover {
+    color: #A58D72;
 }
 #showAllCards {
     font-size: 1rem;

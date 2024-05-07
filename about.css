@@ -70,6 +70,7 @@
 }
 .about-shelter-section .section-container .row {
     width: 100%;
+    height: fit-content;
     justify-content: space-between;
     margin-bottom: 70px;
 }
@@ -77,7 +78,7 @@
     flex-direction: row-reverse;
 }
 .text-block p {
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     color: #393129;
 }
 .text-block h3 {
@@ -87,39 +88,38 @@
 .pic-block-1, .pic-block-2, .pic-block-3 {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
-.pic-block-1 { height: 346px;}
-.pic-block-2 { height: 409px;}
-.pic-block-3 { height: 309px;}
 .pic-1-1 {
-    width: 158px;
-    align-self: flex-end;
+    width: 43%;
+    align-self: flex-start;
+    margin-top: 40%;
 }
 .pic-1-2 {
-    width: 194px;
+    width: 53%;
     align-self: flex-start;
 }
-.pic-wrapper {
-    width: 203px;
-}
 .pic-2-1 {
-    width: 152px;
-    align-self: center;
+    width: 40.5%;
+    margin-top: 25%;
+}
+.pic-wrapper {
+    width: 55.5%;
 }
 .pic-2-2 {
-    width: 203px;
+    width: 100%;
     margin-bottom: 15px;
 }
 .pic-2-3 {
-    width: 203px;
+    width: 100%;
 }
 .pic-3-1{
-    width: 180px;
-    align-self: flex-start;
+    width: 49%;
+    margin-bottom: 21%;
 }
 .pic-3-2 {
-    width: 174px;
-    align-self: flex-end;
+    width: 47%;
+    margin-top: 17.4%;
 }
 div[class^="pic-1-"] img, div[class^="pic-2-"] img, 
 div[class^="pic-3-"] img {
@@ -144,7 +144,6 @@ div[class^="pic-3-"] img {
 .cards-container--3 {
     width: 73.125vw;
     margin: 0px auto;
-    max-width: 1404px;
     justify-content: center;
 }
 .featured-card {

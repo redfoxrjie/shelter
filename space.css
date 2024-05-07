@@ -1,4 +1,4 @@
-/*按鈕區塊設定*/
+/*樓層區塊設定*/
 .floor-map-section {
     width: 100%;
     height: auto;
@@ -27,12 +27,10 @@
         width: 60%;
     }
 }
-.floor-map-title h1 {
-    margin-bottom: 30px;
-}
-.floor-map-container input {
-    display: none;
-}
+.floor-map-title h1 {margin-bottom: 30px;}
+.floor-map-container input {display: none;}
+
+/*樓層圖按鈕*/
 .map-btn-wrapper {
     width: 100%;
     display: flex;
@@ -40,19 +38,49 @@
     justify-content: flex-start;
     align-items: flex-end;
     margin: 30px 0px 0px;
+    gap: 6px;
+}
+@media screen and (min-width: 360px) {
+    .map-btn-wrapper {
+        gap: 12px;
+    }
+}
+@media screen and (min-width: 576px) {
+    .map-btn-wrapper {
+        gap: 24px;
+    }
+}
+.map-btn-wrapper label {
+    flex-grow: 1;
+    max-width: 136px;
+}
+.map-btn-wrapper .btn .font--btn {
+    padding: 12px 15px 10px 15px;
+    font-size: 0.7rem;
+}
+@media screen and (min-width: 576px) {
+    .map-btn-wrapper .btn .font--btn {
+        padding: 12px 30px 10px 30px;
+        font-size: 0.75rem;
+    }
 }
 .map-btn-wrapper .btn:hover .font--btn{
     color: #FAF7F2;
     transition: 0.3s;
 }
+.map-btn-wrapper .btn {width: auto;}
 .map-btn-wrapper h2{
-    margin-bottom: 30px;
+    margin-bottom: 12px;
+    margin-right: 0px;
 }
 @media screen and (min-width: 768px) {
     .map-btn-wrapper h2{
         margin-bottom: 0px;
+        margin-right: -24px;
+        min-width: 164px;
     }
 }
+/*區域顯示色塊*/
 #office-block-mark, #opened-block-mark, #shared-block-mark {
     background-color: #FFC52F;
     opacity: 0;
@@ -88,21 +116,13 @@
     background-color: #393129;
 }
 #office-block:checked ~ .map-btn-wrapper label[for="office-block"] .btn--stroke-primary::before, #opened-block:checked ~ .map-btn-wrapper label[for="opened-block"] .btn--stroke-primary::before,#shared-block:checked ~ .map-btn-wrapper label[for="shared-block"] .btn--stroke-primary::before {
-    width: 97.6px;
-    height: 31.6px;
-    content: '';
-    position: absolute;
-    top: 1.2px;
-    right: 1.2px;
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
     background-color: #393129;
 }
 #office-block:checked ~ .map-btn-wrapper label[for="office-block"] .btn .font--btn, #opened-block:checked ~ .map-btn-wrapper label[for="opened-block"] .btn .font--btn,#shared-block:checked ~ .map-btn-wrapper label[for="shared-block"] .btn .font--btn {
     color: #FAF7F2;
 }
-.floor-map img {
-    width: 100%;
-}
+.floor-map img {width: 100%;}
+
 /*Room Section*/
 .room-section {
     position: relative;
@@ -110,6 +130,9 @@
     width: 100%;
     padding: 0px 0px 14px;
     background-color: #FAF7F2;
+}
+.room-section .row {
+    margin-bottom: 60px;
 }
 .main-img-container {
     width: 100%;
@@ -120,25 +143,28 @@
     width: 100%;
     height: auto;
 }
-#single img {
-    transform: translateY(-20%);
-}
-#double img {
-    transform: translateY(-30%);
-}
-#group img {
-    transform: translateY(-30%);
-}
-#meeting-room img {
-    transform: translateY(-10%);
-}
+#single img {transform: translateY(-20%);}
+#double img {transform: translateY(-30%);}
+#group img {transform: translateY(-30%);}
+#meeting-room img {transform: translateY(-10%);}
 .room-info {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
-    margin: 0 102px;
+    margin: 0 26px;
     margin-bottom: 30px;
+}
+@media screen and (min-width: 360px) {
+    .room-info {
+        width: 100%;
+        margin: 0 7.96vw;
+    }
+}
+@media screen and (min-width: 768px) {
+    .room-info {
+        width: 50%;
+    }
 }
 @media screen and (min-width: 1024px) {
     .room-info {
@@ -149,13 +175,26 @@
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 30px;
+    order: 2;
+}
+.main-img-col {
+    order: 1;
+    margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+    .main-content {
+        order: 1;
+    }
+    .main-img-col {
+        order: 2;
+    }
 }
 .room-section .row:nth-child(even) .room-summary .room-info {
     border-left: 2px solid #393129;
     padding-left: 6.25vw;
     position: relative;
 }
-
 .room-section .row:nth-child(even) .room-summary .room-info .trapezoid--l {
     clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
     width: 6px;
@@ -213,15 +252,9 @@
     top: 102.7%;
     right: -6.4px;
 }
-.room-info h2, .room-info p {
-    color: #393129;
-}
-.room-section .row {
-    margin-bottom: 60px;
-}
-.row-reverse { 
-    flex-direction: row-reverse;
-}
+.room-info h2, .room-info p {color: #393129;}
+.room-section .row {margin-bottom: 60px;}
+.row-reverse { flex-direction: row-reverse;}
 .room-info ul li {
     font-family: "Inter", Verdana, sans-serif;
     font-size: 0.8rem;
