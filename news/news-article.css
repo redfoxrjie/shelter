@@ -11,33 +11,85 @@
     border-bottom: solid 2px #393129;
 }
 .banner-img {
-    aspect-ratio: 2/1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1.333333;
     overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+    .banner-img {
+        aspect-ratio: 2/1;
+        overflow: hidden;
+    }
+    .b
 }
 .banner-img img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .banner-txt {
+    width: 83.4%;
     position: absolute;
-    bottom: 76px;
-    left: 78px;
+    bottom: 15.1%;
+    left: 8.3%;
+}
+@media screen and (min-width: 768px) {
+    .banner-txt {
+        width: 75%;
+        position: absolute;
+        bottom: 15.1%;
+        left: 8.3%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .banner-txt {
+        width: 60%;
+        position: absolute;
+        bottom: 15.1%;
+        left: 8.3%;
+    }
 }
 .banner-txt h2, .font--time {
     color: #FAF7F2;
 }
 .banner-txt h2 {
+    font-size: 1.2rem;
     line-height: 144%;
 }
+@media screen and (min-width: 360px) {
+    .banner-txt h2 {
+        font-size: 1.5rem;
+        line-height: 144%;
+    }
+}
 .font--time {
-    letter-spacing: 1px;
-    font-size: 0.875rem;
+    font-size: .875rem;
+    letter-spacing: 1.8px;
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 360px){
+    .slider-content .font--time{
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin-bottom: 13px;
+    }
 }
 .overlay-dark {
     background-color: #000;
-    aspect-ratio: 2/1;
+    aspect-ratio: 1/1.3333;
     width: 100%;
     position: absolute;
     opacity: .2;
+}
+@media screen and (min-width: 768px) {
+    .overlay-dark {
+        background-color: #000;
+        aspect-ratio: 2/1;
+        width: 100%;
+        position: absolute;
+        opacity: .2;
+    }
 }
 .article-section {
     width: 100%;

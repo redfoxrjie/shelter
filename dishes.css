@@ -13,7 +13,7 @@ body {
     color: #393129;
     text-align: center;
     margin: 100px 0px 40px;
-    padding: 0px 80px;
+    padding: 0 8.54%;
 }
 .page-title > h1 {
     margin-bottom: 20px;
@@ -69,7 +69,7 @@ body {
 }
 .menu .row .col-12 {
     box-sizing: border-box;
-    padding: 2.1% 6.6% 2.1% 5.9%;
+    padding: 6.6% 6.6% 2.2% 6.6%;
 }
 span.icon img {
     object-fit: contain;

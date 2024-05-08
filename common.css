@@ -315,21 +315,38 @@ header {
     transition-delay: 50ms;
 }
 #site-menu {
-    /* display: none; */
-    pointer-events: none;
-    opacity: 0;
     position: fixed;
     top: 1.2vh;
     right: 1.35vw;
-    min-width: 300px;
     width: 25vw;
-    height: 94vh;
+    min-width: 300px;
+    height: 86vh;
     background-color: #FAF7F2;
     border-radius: 10px 0px 0px 10px;
-    padding: 40px 20px 20px 40px;
     box-sizing: border-box;
-    z-index: 4;
+    padding: 40px 20px 20px 40px;
+    opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 4;
+}
+@media screen and (min-width: 768px) {
+    #site-menu {
+        position: fixed;
+        top: 1.2vh;
+        right: 1.35vw;
+        width: 25vw;
+        min-width: 300px;
+        height: 94vh;
+        background-color: #FAF7F2;
+        border-radius: 10px 0px 0px 10px;
+        box-sizing: border-box;
+        padding: 40px 20px 20px 40px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 4;
+    }
 }
 #site-menu.active {
     display: block;
@@ -349,7 +366,8 @@ header {
     pointer-events: auto;
 }
 .site-menu_item {
-    margin: 20px 0px;
+    margin: 3.6vh 0;
+    /* margin: 20px 0px; */
 }
 .site-menu_item a {
     font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
@@ -388,6 +406,7 @@ header {
     display: flex;
     justify-content: space-between;
     position: absolute;
+    left: 50px;
     bottom: 20px;
 }
 .social-icon--sm {
@@ -721,7 +740,10 @@ footer {
     padding: 12px 0px;
     flex-grow: 1;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
+}
+.input-box .login-btns .btn--stroke-primary {
+    color: #393129;
 }
 .input-box .login-btns .btn--stroke-primary:hover {
     color: #FAF7F2;
