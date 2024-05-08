@@ -237,7 +237,6 @@ section.slides-section {
     border: solid 1.4px #fff;
     padding: 12px 18px;
     color: #fff;
-    margin-top: 32px;
     letter-spacing: 2px;
     font-size: 0.75rem;
     position: relative;
@@ -257,11 +256,11 @@ section.slides-section {
         border: solid 2px #fff;
     }
 }
-.slides-title a {
+.slides-logo a {
     display: block;
     overflow: hidden;
     width: fit-content;
-    margin: 0px auto;
+    margin: 32px auto 0px;
 }
 .bg-slide {
     background-color: #FFC52F;
@@ -564,6 +563,9 @@ section.slides-section {
 .route-gudiance {
     margin-bottom: 30px;
 }
+.map {
+    animation: fadeIn .5s ease-in;
+}
 .route-map-block {
     margin-top: auto;
 }
@@ -604,4 +606,7 @@ section.slides-section {
     display: inline-block;
     width: 0.75rem;
     margin-left: 3px;
+}
+.hidden {
+    display: none;
 }

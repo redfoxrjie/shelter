@@ -21,10 +21,22 @@ p {
 a { text-decoration: none; color: #393129;}
 .font--card-title {
     font-family: "Inter", Verdana, sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     line-height: 22px;
     letter-spacing: 1px;
     font-weight: 400;
+}
+button {
+    border: none;
+}
+@media screen and (min-width: 768px) {
+    .font--card-title {
+        font-family: "Inter", Verdana, sans-serif;
+        font-size: 0.8rem;
+        line-height: 22px;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
 }
 .font--card-list {
     font-size: 0.88rem;
@@ -96,6 +108,9 @@ a { text-decoration: none; color: #393129;}
     transition: background-color .3s;
     z-index: -1;
 }
+.btn--stroke-primary:active::before {
+    background-color: #393129;
+}
 /*btn-primary--hover&click*/
 .btn--stroke-primary:hover::before{
     background-color: #393129;
@@ -137,9 +152,10 @@ a { text-decoration: none; color: #393129;}
 }
 .btn--filled-primary:hover {
     color: #393129;
+    background-color: #FFC52F;
 }
 .btn--filled-primary:hover::before {
-    background-color: #FAF7F2;
+    background-color: #FFC52F;
     transition: background-color .3s;
 }
 .btn--filled-cta {
@@ -306,21 +322,23 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity .3s ease;
-    pointer-events: none;
+    pointer-events: fill;
     z-index: 3;
+    display: none;
 }
 #overlay--black.active {
     opacity: 1;
     transition: opacity .4s ease;
     transition-delay: 50ms;
+    display: block;
 }
 #site-menu {
     position: fixed;
     top: 1.2vh;
     right: 1.35vw;
     width: 25vw;
-    min-width: 300px;
-    height: 86vh;
+    min-width: 320px;
+    height: 80vh;
     background-color: #FAF7F2;
     border-radius: 10px 0px 0px 10px;
     box-sizing: border-box;
@@ -336,7 +354,7 @@ header {
         top: 1.2vh;
         right: 1.35vw;
         width: 25vw;
-        min-width: 300px;
+        min-width: 320px;
         height: 94vh;
         background-color: #FAF7F2;
         border-radius: 10px 0px 0px 10px;
@@ -367,7 +385,6 @@ header {
 }
 .site-menu_item {
     margin: 3.6vh 0;
-    /* margin: 20px 0px; */
 }
 .site-menu_item a {
     font-family: "Zen Kaku Gothic New", Verdana, sans-serif;
@@ -402,18 +419,26 @@ header {
     transition: opacity 250ms;
 }
 .social-icon-wrapper {
-    width: 30%;
+    width: fit-content;
     display: flex;
-    justify-content: space-between;
     position: absolute;
     left: 50px;
     bottom: 20px;
+    gap: 20px;
 }
 .social-icon--sm {
     display: inline-block;
-    width: 18px; /* 設置圖示寬度 */
-    height: 18px; /* 設置圖示高度 */
+    width: 24px; 
+    height: 24px;
     background-size: cover;
+}
+@media screen and (min-width: 768px) {
+    .social-icon--sm {
+        display: inline-block;
+        width: 18px; 
+        height: 18px;
+        background-size: cover;
+    }
 }
 .instagram {
     background-image: url(images/icon_svg/instagram.svg);
@@ -432,6 +457,7 @@ header {
     left: 0;
     border-radius: 0px 0px 10px 10px;
     padding: 14px 24px;
+    box-shadow: 0px 6px 10px  rgba(0,0,0,.2);
 }
 #memberArea li {
     font-size: 0.875rem;
@@ -605,10 +631,19 @@ footer {
     margin: 0px auto;
 }
 /*lightbox設定*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 #login-lightbox.active {
+    width: auto;
     display: block;
     border-radius: 10px;
-    width: auto;
+    animation: fadeIn .2s ease-in;
 }
 .lightbox {
     width: 100%;
@@ -648,15 +683,34 @@ footer {
     transition: scale .3s;
 }
 .lightbox-container {
-    width: 73.125vw;
+    width: 90vw;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     background-color: #FAF7F2;
 }
+@media screen and (min-width: 768px) {
+    .lightbox-container {
+        width: 73.125vw;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #FAF7F2;
+    }
+}
 .login-btns {
     display: flex;
-    gap: 6px;
+    flex-direction: column-reverse;
+    gap: 12px;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .login-btns {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        width: 100%;
+    }
 }
 .lightbox-title h1 {
     font-size: 3.25rem;
@@ -695,8 +749,14 @@ footer {
     }
 }
 .input-box {
-    width: 61%;
+    width: 76%;
     margin: 0px auto;
+}
+@media screen and (min-width: 768px) {
+    .input-box {
+        width: 61%;
+        margin: 0px auto;
+    }
 }
 .lightbox-title h2 {
     color: #393129;
@@ -728,7 +788,7 @@ footer {
     outline: none;
 }
 .input-front {
-    min-width: 64px;
+    min-width: 3.8rem;
 }
 .input-box .login-btns .btn{
     font-family: "Aldrich", Verdana, sans-serif;
@@ -741,6 +801,43 @@ footer {
     flex-grow: 1;
     border: none;
     cursor: pointer;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 96% 100%, 0% 100%);
+}
+@media screen and (min-width: 768px) {
+    .input-box .login-btns .btn{
+        font-family: "Aldrich", Verdana, sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        text-align: center;
+        text-decoration: none;
+        position: relative;
+        padding: 12px 0px;
+        flex-grow: 1;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    }
+}
+.input-box .login-btns .btn::before {
+    width: 99%;
+    height: 93%;
+    content: '';
+    position: absolute;
+    right: 0.4%;
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 96% 100%, 0% 100%);
+}
+@media screen and (min-width: 768px) {
+    .input-box .login-btns .btn::before {
+        width: 98%;
+        height: 93%;
+        content: '';
+        position: absolute;
+        top: 1.2px;
+        right: 1.2px;
+        clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    }
 }
 .input-box .login-btns .btn--stroke-primary {
     color: #393129;
@@ -757,6 +854,7 @@ footer {
     display: block;
     margin: 78px auto 0px;
     transition: color .3s;
+    font-size: 0.875rem;
 }
 #forgot-pswd:hover {
     color: #393129;
@@ -774,5 +872,33 @@ footer {
         rotate: 270deg;
         top: 50%;
         left: 100%;
+    }
+}
+@keyframes slideIn_Y {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideIn_X {
+    from {
+        opacity: 0;
+        transform: translateX(8%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }

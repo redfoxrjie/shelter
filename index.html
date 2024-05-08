@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +50,9 @@
             </btn>
             <nav id="memberArea">
                 <ul>
-                    <a href="#"><li class="site-menu_item">會員資料</li></a>
+                    <a href="#">
+                        <li class="site-menu_item">會員資料</li>
+                    </a>
                     <li class="site-menu_item" id="logOut">登出</li>
                 </ul>
             </nav>
@@ -97,7 +98,8 @@
                                 <div class="input-front">Email：</div><input type="email" name="email" id="email">
                             </div>
                             <div class="input-bar">
-                                <div class="input-front">密  碼：</div><input type="password" name="password" id="password" maxlength="16" minlength="8">
+                                <div class="input-front">密 碼：</div><input type="password" name="password" id="password"
+                                    maxlength="16" minlength="8">
                             </div>
                             <div class="login-btns">
                                 <button class="btn btn--stroke-primary">
@@ -171,7 +173,6 @@
                     </div>
                 </a>
             </div>
-
         </div>
 
     </section>
@@ -357,34 +358,39 @@
                 <h2>如何前往<span class="font--logo">SHELTER</span></h2>
                 <div class="transport-btn-wrapper">
                     <label for="drive">
-                        <div class="btn btn--stroke-white">
+                        <div class="btn btn--stroke-white route-btn">
                             <span class="font--btn">開車</span>
                         </div>
                     </label>
                     <label for="bus">
-                        <div class="btn btn--stroke-white">
+                        <div class="btn btn--stroke-white route-btn">
                             <span class="font--btn">公車</span>
                         </div>
                     </label>
                     <label for="MRT">
-                        <div class="btn btn--stroke-white">
+                        <div class="btn btn--stroke-white route-btn">
                             <span class="font--btn">捷運</span>
                         </div>
                     </label>
                 </div>
                 <div class="route-gudiance">
-                    <div id="drive-plan">北上：沿[國道一號]北上並於[25環北出口]下交流道接[環河快速道路]左轉進入[民族西路]行駛約900公尺後右轉進入[承德路]。於[南京西路]左轉後行駛約350公尺即抵達。</div>
+                    <div id="drive-plan">
+                        北上：沿[國道一號]北上並於[25環北出口]下交流道接[環河快速道路]左轉進入[民族西路]行駛約900公尺後右轉進入[承德路]。於[南京西路]左轉後行駛約350公尺即抵達。</div>
                     <div id="bus-plan">從台北車站：搭乘[24號公車]往北投方向，約10分鐘，於[薛爾特大樓站]下車即抵達。</div>
                     <div id="MRT-plan">從台北車站：搭乘捷運[淡水信義線]往[北投/淡水]方向至捷運[中山站]2號出口出站，步行約5分鐘。</div>
                 </div>
             </div>
             <div class="route-map-block col">
                 <div class="route-map-container">
-                    <iframe
+                    <div id="routeMap">
+                        <iframe
                         src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3614.518561820289!2d121.51624562479194!3d25.050407437631783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3442a9727d969f51%3A0xd0f3033a81203ed2!2z5Y-w5YyX5biC5Lit5q2j5Y2A5Y-w5YyX6LuK56uZ!3m2!1d25.0476133!2d121.5174062!4m5!1s0x3442a9694b87ba4b%3A0xa52a7fbbc03cb8d!2z5Y-w5YyX5biC5Lit5bGx5Y2A5Y2X5Lqs6KW_6Lev5paw5YWJ5LiJ6LaKIOWPsOWMl-WNl-ilv-W6l-S4gOmkqA!3m2!1d25.0523201!2d121.5210989!5e0!3m2!1szh-TW!2stw!4v1713089113052!5m2!1szh-TW!2stw"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                        referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d49689.252659548845!2d121.47479885727354!3d25.066676301312878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3442a961eb6be5fb%3A0x547d6315a71a3e45!2z5paw5YyX5biC5LiJ6YeN5Y2A5ZyL6YGTMeiZnw!3m2!1d25.0739226!2d121.47831479999999!4m5!1s0x3442a9694b87ba4b%3A0xa52a7fbbc03cb8d!2z5paw5YWJ5LiJ6LaKIOWPsOWMl-WNl-ilv-W6l-S4gOmkqCAxMDQ5MeWPsOWMl-W4guS4reWxseWNgOWNl-S6rOilv-i3rzEy6Jmf!3m2!1d25.0523201!2d121.5210989!5e0!3m2!1szh-TW!2stw!4v1715179022561!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d49689.252659548845!2d121.47479885727354!3d25.066676301312878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x3442a97263b48c71%3A0x7f964669b3bf255e!2z6Ie65YyX6LuK56uZIDEwMOWPsOWMl-W4guS4reato-WNgA!3m2!1d25.0474428!2d121.5170955!4m5!1s0x3442a9694b87ba4b%3A0xa52a7fbbc03cb8d!2z5paw5YWJ5LiJ6LaKIOWPsOWMl-WNl-ilv-W6l-S4gOmkqCAxMDQ5MeWPsOWMl-W4guS4reWxseWNgOWNl-S6rOilv-i3rzEy6Jmf!3m2!1d25.0523201!2d121.5210989!5e0!3m2!1szh-TW!2stw!4v1715179223862!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+                    </div>
+                    
                 </div>
                 <div class="address-block">
                     <div class="address-info">
@@ -424,14 +430,16 @@
     </footer>
 
     <script>
-        //Slides
+        //-----Slides-----
         let slideIndex = 0;
         showSlides();
+
         function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slides");
-            let dots = document.getElementsByClassName("dot");
+
+            let slides = document.querySelectorAll(".slides");
+            let dots = document.querySelectorAll(".dot");
             //先宣告完slide與dot為各自id
+
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -442,22 +450,36 @@
             slides[slideIndex].style.display = "block";
             dots[slideIndex].className += " active";
             slideIndex++;
-            if (slideIndex > slides.length - 1) { slideIndex = 0; }
-            setTimeout(showSlides, 5000);
+            if (slideIndex > slides.length - 1) { slideIndex = 0; }//循環
+            setTimeout(showSlides, 6000);
         }
-        //nav-toggle-n-list
+        let dots = document.getElementsByClassName("dot");
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].addEventListener("click", function () {
+                slideIndex = i;
+                showSlides();
+            })
+        }
+
+        //-----Nav-toggle-n-list-----
         document.getElementById('menu-toggle').addEventListener('click', function () {
             document.getElementById('login-lightbox').classList.remove('active');
             document.getElementById('site-menu').classList.toggle('active');
-            document.getElementById('overlay--black').classList.toggle('active');
             document.getElementById('menu-toggle').classList.toggle('active');
+
+            let overlayActive = document.getElementById('overlay--black').classList.contains('active');
+            if (overlayActive == false) {
+                document.getElementById('overlay--black').classList.add('active');
+            } else {
+                document.getElementById('overlay--black').classList.remove('active');
+            }
         });
         document.getElementById('overlay--black').addEventListener('click', function () {
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
             document.getElementById('menu-toggle').classList.remove('active');
         });
-        
+
         //-----Login Page:function-----
         let loginStatus = document.getElementById("loginStatus").textContent;
         let lightBox = document.getElementById("login-lightbox");
@@ -494,12 +516,18 @@
         }
         //-----Login Page:login-----
         document.getElementById('loginBtn').addEventListener('click', function () {
+            document.getElementById('menu-toggle').classList.remove('active');
             let loginStatus = document.getElementById("loginStatus").textContent;
+            let overlayActive = document.getElementById('overlay--black').classList.contains('active');
             if (loginStatus === '會員登入') {
                 document.getElementById('site-menu').classList.remove('active');
                 document.getElementById('login-lightbox').classList.toggle('active');
-                document.getElementById('overlay--black').classList.toggle('active');
-            }
+                if (overlayActive == false) {
+                    document.getElementById('overlay--black').classList.add('active');
+                } else {
+                    document.getElementById('overlay--black').classList.remove('active');
+                }
+            }   
         });
         document.getElementById("lightboxCancel").addEventListener('click', function () {
             document.getElementById('login-lightbox').classList.remove('active');
@@ -541,11 +569,33 @@
         })
         //-----Logout:登出-----
         let logOut = document.getElementById('logOut');
-        logOut.addEventListener('click', function(){
+        logOut.addEventListener('click', function () {
             clearData();
             document.getElementById('loginStatus').textContent = '會員登入';
             memberArea.style.display = "none";
         })
+        //-----Route Map-----
+        let routeBtns = document.querySelectorAll('.route-btn');
+        let routeMap = document.getElementById('routeMap');
+        let map = document.querySelectorAll('.map');
+
+        function init(){
+            map.forEach(function (mapItem) {
+            mapItem.classList.add('hidden');
+            })
+            map[0].classList.remove('hidden');
+        }
+        
+        routeBtns.forEach(function (btn, index) {
+            btn.addEventListener('click', function () {
+                map.forEach(function (mapItem) {
+                    mapItem.classList.add('hidden');
+                })
+                let thisMap = map[index];
+                thisMap.classList.remove('hidden');
+            })
+        })
+        document.addEventListener('load', init());
     </script>
 </body>
 

@@ -24,7 +24,9 @@
     }
 }
 .contact .lightbox-container .lightbox-title h2 { margin-bottom: 10px;}
-
+.lightbox-title p {
+    text-align: center;
+}
 .contact .lightbox-container .input-section {
     padding: 60px 0px 40px;
 }
@@ -118,7 +120,7 @@
     width: 100%;
     padding: 3.4% 10% 3% 10%;
     margin-left: auto;
-    clip-path: polygon(0 0, 100% 0, 100% 81%, 89% 100%, 0% 100%);
+    clip-path: polygon(0px 0px, 100% 0px, 100% 81%, 96% 100%, 0% 100%);
     cursor: pointer;
 }
 @media screen and (min-width: 768px) {

@@ -44,7 +44,9 @@
             </btn>
             <nav id="memberArea">
                 <ul>
-                    <a href="#"><li class="site-menu_item">會員資料</li></a>
+                    <a href="#">
+                        <li class="site-menu_item">會員資料</li>
+                    </a>
                     <li class="site-menu_item" id="logOut">登出</li>
                 </ul>
             </nav>
@@ -76,7 +78,7 @@
         <div id="login-lightbox" class="lightbox login">
             <div class="lightbox-container">
                 <div id="lightboxCancel">
-                    <img src="../images/icon_svg/xmark-solid--white.svg" alt="">
+                    <img src="images/icon_svg/xmark-solid--white.svg" alt="">
                 </div>
                 <div class="row">
                     <div class="lightbox-title col-12 col-md-5">
@@ -90,7 +92,8 @@
                                 <div class="input-front">Email：</div><input type="email" name="email" id="email">
                             </div>
                             <div class="input-bar">
-                                <div class="input-front">密  碼：</div><input type="password" name="password" id="password" maxlength="16" minlength="8">
+                                <div class="input-front">密 碼：</div><input type="password" name="password" id="password"
+                                    maxlength="16" minlength="8">
                             </div>
                             <div class="login-btns">
                                 <button class="btn btn--stroke-primary">
@@ -247,19 +250,25 @@
         </div>
     </footer>
     <script>
-        //nav-toggle-n-list
+        //-----Nav-toggle-n-list-----
         document.getElementById('menu-toggle').addEventListener('click', function () {
             document.getElementById('login-lightbox').classList.remove('active');
             document.getElementById('site-menu').classList.toggle('active');
-            document.getElementById('overlay--black').classList.toggle('active');
             document.getElementById('menu-toggle').classList.toggle('active');
+
+            let overlayActive = document.getElementById('overlay--black').classList.contains('active');
+            if (overlayActive == false) {
+                document.getElementById('overlay--black').classList.add('active');
+            } else {
+                document.getElementById('overlay--black').classList.remove('active');
+            }
         });
         document.getElementById('overlay--black').addEventListener('click', function () {
             document.getElementById('site-menu').classList.remove('active');
             document.getElementById('overlay--black').classList.remove('active');
             document.getElementById('menu-toggle').classList.remove('active');
         });
-        
+
         //-----Login Page:function-----
         let loginStatus = document.getElementById("loginStatus").textContent;
         let lightBox = document.getElementById("login-lightbox");
@@ -296,12 +305,18 @@
         }
         //-----Login Page:login-----
         document.getElementById('loginBtn').addEventListener('click', function () {
+            document.getElementById('menu-toggle').classList.remove('active');
             let loginStatus = document.getElementById("loginStatus").textContent;
+            let overlayActive = document.getElementById('overlay--black').classList.contains('active');
             if (loginStatus === '會員登入') {
                 document.getElementById('site-menu').classList.remove('active');
                 document.getElementById('login-lightbox').classList.toggle('active');
-                document.getElementById('overlay--black').classList.toggle('active');
-            }
+                if (overlayActive == false) {
+                    document.getElementById('overlay--black').classList.add('active');
+                } else {
+                    document.getElementById('overlay--black').classList.remove('active');
+                }
+            }   
         });
         document.getElementById("lightboxCancel").addEventListener('click', function () {
             document.getElementById('login-lightbox').classList.remove('active');
@@ -343,7 +358,7 @@
         })
         //-----Logout:登出-----
         let logOut = document.getElementById('logOut');
-        logOut.addEventListener('click', function(){
+        logOut.addEventListener('click', function () {
             clearData();
             document.getElementById('loginStatus').textContent = '會員登入';
             memberArea.style.display = "none";
