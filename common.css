@@ -586,20 +586,30 @@ footer {
         display: inline-block;
     }
 }
-.legal-notice p {
-    font-size: 0.5rem;
-    letter-spacing: 0px;
-    line-height: 100%;
+.copyright {
+    width: 73.125%;
+    text-align: center;
+    margin: 16px auto 0;
+    font-size: 0.625rem;
     font-weight: 300;
-    margin-top: 6px;
+    letter-spacing: 1px;
+    line-height: 140%;
+}
+.copyright a {
+    text-decoration: underline;
+}
+.copyright a:hover {
+    color: #A58D72;
 }
 @media screen and (min-width: 576px) {
-    .legal-notice p {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        line-height: 100%;
+    .copyright {
+        width: 73.125%;
+        text-align: center;
+        margin: 16px auto 0;
+        font-size: 0.625rem;
         font-weight: 300;
-        margin-top: 6px;
+        letter-spacing: 1px;
+        line-height: 140%;
     }
 }
 /*Divier樣式*/
